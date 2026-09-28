@@ -10,6 +10,8 @@ Die Repository-Wurzel enthält eine statische Prüfungsübungs-Webseite für die
 - acht aufeinander aufbauende Arbeitsschritte vom Lagebild bis zum Prüfungstransfer als mögliches Klausurvorgehen;
 - am selben fiktiven Fall werden Beobachtung, fachliche Einordnung, Abwägung und begründete Handlung geübt;
 - fachliche Kontrollpunkte und Quellenbezüge;
+- vollständige Board-Quellenbibliothek mit allen 22 fachlichen Quellen bzw. 24 lokal gesicherten Board-PDFs;
+- separate Seite `analyse.html` für vertiefte Textarbeit, Quervergleiche, Spannungsfelder und Klausurtransfer;
 - vereinfachte §-8a-Verfahrenslogik mit Links auf die amtlichen Gesetzestexte;
 - lokale Notizen und Fortschrittsanzeige ohne Konto oder Server-Datenspeicherung;
 - Druckansicht für Arbeitsblätter bzw. PDF-Ausgabe.
@@ -18,12 +20,12 @@ Die Seite bleibt ohne Frontend-Build nutzbar. `index.html`, `styles.css` und `ap
 
 ## Stand
 
-Erfasst am 21.09.2026 aus dem bereitgestellten Edupool-Board.
+Erfasst am 21.09.2026 aus dem bereitgestellten Edupool-Board; am 28.09.2026 erneut vollständig gegen das Live-Board verifiziert und frisch heruntergeladen.
 
 **Oberquelle:** Edupool-Board „Prüfung 2027 Sommer FS“. URL und Provenienz werden ausschließlich im kanonischen Quellenkatalog `data/sources.json` gepflegt und daraus in Webseite und generierte Quellenverzeichnisse übernommen.
 
 - 35 von 35 Board-Karten strukturell erfasst;
-- 24 eindeutige PDF-Dateien lokal gesichert (39.168.539 Byte);
+- 24 eindeutige PDF-Dateien lokal gesichert (39.168.539 Byte); der frische Download vom 28.09.2026 stimmt in Dateigröße und SHA-256 vollständig mit dem technischen Manifest überein;
 - alle PDFs lokal in Text überführt;
 - textbasierte PDFs mit `pdftotext`, Scan-PDFs ergänzend mit deutscher/englischer OCR;
 - Quelldateien und Volltranskripte liegen ausschließlich im lokalen, von Git ausgeschlossenen Verzeichnis `source-private/`.
@@ -55,7 +57,8 @@ Der Generator prüft dabei auch die vollständige Übereinstimmung mit `quellen/
 
 ## Inhalt
 
-- [Webseite](index.html)
+- [Fallwerkstatt](index.html)
+- [Vertieftes Textstudium](analyse.html)
 - [Prüfungsstruktur und Board-Inventar](docs/pruefungsstruktur.md)
 - [Themen- und Quellenmatrix](docs/themenmatrix.md)
 - [Quellenverzeichnis](quellen/quellenverzeichnis.md) — generiert aus dem Quellenkatalog
