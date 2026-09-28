@@ -1,5 +1,6 @@
 (() => {
   const STORAGE_KEY = "beziehungsgestaltung-okja-lernwerkstatt-v1";
+  const LEGACY_STORAGE_KEY = "kwg-fallwerkstatt-v1";
   const SOURCE_DATA_URL = "data/sources.json";
   const SOURCE_STATUS_URL = "quellen/pdf-quellen.md";
   const state = loadState();
@@ -26,10 +27,17 @@
 
   function loadState() {
     try {
-      const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-      return parsed && typeof parsed === "object"
-        ? { ...defaultState(), ...parsed }
-        : defaultState();
+      const current = localStorage.getItem(STORAGE_KEY);
+      const legacy = current === null ? localStorage.getItem(LEGACY_STORAGE_KEY) : null;
+      const parsed = JSON.parse(current ?? legacy ?? "null");
+      if (!parsed || typeof parsed !== "object") return defaultState();
+
+      const migrated = { ...defaultState(), ...parsed };
+      if (current === null && legacy !== null) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
+        localStorage.removeItem(LEGACY_STORAGE_KEY);
+      }
+      return migrated;
     } catch {
       return defaultState();
     }
