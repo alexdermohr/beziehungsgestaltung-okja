@@ -11,7 +11,7 @@ Die Repository-Wurzel enthält eine statische Prüfungsübungs-Webseite für die
 - am selben fiktiven Fall werden Beobachtung, fachliche Einordnung, Abwägung und begründete Handlung geübt;
 - fachliche Kontrollpunkte und Quellenbezüge;
 - vollständige Board-Quellenbibliothek mit allen 22 fachlichen Quellen bzw. 24 lokal gesicherten Board-PDFs;
-- separate Seite `analyse.html` für vertiefte Textarbeit, Quervergleiche, Spannungsfelder und Klausurtransfer;
+- separate Seite `analyse.html` für vertiefte Textarbeit mit aufgedröselten Modellen, Gefährdungsformen, Rollen nach §§ 8/8a/8b SGB VIII, Konzeptbausteinen, Spannungsfeldern und fallbezogenem Klausurtransfer;
 - vereinfachte §-8a-Verfahrenslogik mit Links auf die amtlichen Gesetzestexte;
 - lokale Notizen und Fortschrittsanzeige ohne Konto oder Server-Datenspeicherung;
 - Druckansicht für Arbeitsblätter bzw. PDF-Ausgabe.
