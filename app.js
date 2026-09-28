@@ -1,5 +1,5 @@
 (() => {
-  const STORAGE_KEY = "kwg-fallwerkstatt-v1";
+  const STORAGE_KEY = "beziehungsgestaltung-okja-lernwerkstatt-v1";
   const SOURCE_DATA_URL = "data/sources.json";
   const SOURCE_STATUS_URL = "quellen/pdf-quellen.md";
   const state = loadState();
@@ -397,7 +397,7 @@
     });
 
     const text = [
-      "# Fallwerkstatt – Arbeitsstand",
+      "# Beziehungsgestaltung in der OKJA – Arbeitsstand",
       "",
       ...sections,
       "",

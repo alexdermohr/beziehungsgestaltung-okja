@@ -387,13 +387,6 @@
 
 .exam-argument p { margin: 3px 0 0; color: var(--muted); }
 
-.pt1-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 20px;
-}
-
 .study-source-list {
   display: grid;
   gap: 11px;
@@ -516,7 +509,6 @@
 .module-grid,
 .indicator-grid,
 .sentence-grid,
-.pt1-map,
 .source-reading-key {
   display: grid;
   gap: 12px;
@@ -541,7 +533,6 @@
 .module-grid > section,
 .indicator-grid > section,
 .sentence-grid > section,
-.pt1-map > section,
 .source-reading-key > section {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -714,7 +705,6 @@
 .indicator-grid > section,
 .module-grid > section,
 .sentence-grid > section,
-.pt1-map > section,
 .source-reading-key > section {
   padding: 14px 15px;
 }
@@ -722,7 +712,6 @@
 .indicator-grid strong,
 .module-grid strong,
 .sentence-grid strong,
-.pt1-map strong,
 .source-reading-key strong {
   display: block;
   margin-bottom: 5px;
@@ -731,7 +720,6 @@
 .indicator-grid span,
 .module-grid span,
 .sentence-grid span,
-.pt1-map span,
 .source-reading-key span {
   color: var(--muted);
   font-size: 0.84rem;
@@ -845,7 +833,6 @@
 }
 
 .sentence-grid,
-.pt1-map,
 .source-reading-key {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 14px;
@@ -874,7 +861,6 @@
   .indicator-grid,
   .contrast-grid,
   .sentence-grid,
-  .pt1-map,
   .source-reading-key,
   .four-lenses {
     grid-template-columns: 1fr;

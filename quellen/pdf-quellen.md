@@ -8,7 +8,7 @@ Dieser Bericht wird aus `data/sources.json` erzeugt. Der Katalog ist die einzige
 
 ## Oberquelle
 
-[Edupool-Board „Prüfung 2027 Sommer FS“](https://boards.edupool.cloud/s/Id-aVXBZEkn6RYOYY1aaEximB7QgB7SL0YOhxrezpdM) — Zentrale Zugangs- und Provenienzquelle; sämtliche hier erschlossenen Prüfungsunterlagen und Fachquellen sind dort enthalten oder verlinkt. Die einzelnen Werke bleiben die fachlichen Originalquellen.
+[Edupool-Board „Prüfung 2027 Sommer FS“](https://boards.edupool.cloud/s/Id-aVXBZEkn6RYOYY1aaEximB7QgB7SL0YOhxrezpdM) — Zentrale Zugangs- und Provenienzquelle; die für Beziehungsgestaltung in der OKJA erschlossenen PT2-Prüfungsunterlagen und Fachquellen sind dort enthalten oder verlinkt. Die einzelnen Werke bleiben die fachlichen Originalquellen.
 
 Ein öffentlicher PDF-Link bedeutet nicht automatisch eine freie Lizenz. Verlinkt wird nur auf bestehende öffentliche Fassungen; lokal gesicherte Board-Auszüge werden nicht erneut veröffentlicht.
 
@@ -16,20 +16,8 @@ Ein öffentlicher PDF-Link bedeutet nicht automatisch eine freie Lizenz. Verlink
 
 | Board-Datei | Quelle | Öffentliche PDF-Fassung / Status |
 |---|---|---|
-| Basiskompetenzen Prüfung Sommer 2027.pdf | Basiskompetenzen Prüfung Sommer 2027 | Kein belastbarer öffentlicher PDF-Link gefunden. |
 | Entwurf_Operatorenliste_FS_nBP.pdf | Entwurf Operatorenliste FS nBP | Kein belastbarer öffentlicher PDF-Link gefunden. |
 | PT2_Sommer 2027_Basiskompetenzen.pdf | PT2 Sommer 2027 – Basiskompetenzen | Kein belastbarer öffentlicher PDF-Link gefunden. |
-
-## PT1 · Informatik, Medien und digitale Bildung
-
-| Board-Datei | Quelle | Öffentliche PDF-Fassung / Status |
-|---|---|---|
-| 1. Bergner_et_al2019_Fruehe_informatische_Bildung.pdf — S. 28–29, 39–41, 274–277 | Frühe informatische Bildung | [öffentliches PDF](https://www.pedocs.de/volltexte/2019/17813/pdf/Bergner_et_al2019_Fruehe_informatische_Bildung.pdf) |
-| 2. Bildungsleitlinien.pdf — S. 58–61 | Perspektive Kind – Hamburger Bildungsleitlinien | [offizielles PDF](https://dokumente.hamburg.de/resource/blob/35920/4d41e681db1c556340d235f366949ba0/bildungsleitlinien-data.pdf) |
-| 3. WiFF_Expertise57_Knauf.pdf — S. 6–8, 31–35 | Förderung digitaler Kompetenzen | [offizielles PDF](https://www.weiterbildungsinitiative.de/fileadmin/Redaktion/Publikationen/WiFF_Expertise57_Knauf_Web.pdf) |
-| 4. miniKIM2023.pdf — S. 10–12, 43–44 | miniKIM-Studie 2023 | [offizielles PDF](https://www.lfk.de/fileadmin/PDFs/Publikationen/Studien/miniKIM-Studie/mini-kim-studie-2023.pdf) |
-| 5. Broschuere_Informatik_2017.pdf — S. 10–13, 15, 19–25, 34–39 | Informatik entdecken – Mit und ohne Computer | Der historische Direkt-PDF-Link leitet inzwischen auf die Stiftung/Campus-Materialseite um; daher wird kein funktionierender Direkt-PDF-Link behauptet. |
-| 6. BeeBotBooklet.pdf — S. 4–10 | Bee-Bot – Grundlagen & Methoden | [offizielles PDF](https://lehrerweb.wien/fileadmin/lehrerweb-redakteure/Diverses/Downloads/Booklets/BeeBotBookletDownload.pdf) |
 
 ## PT2 · Beziehungsgestaltung
 
@@ -51,7 +39,7 @@ Ein öffentlicher PDF-Link bedeutet nicht automatisch eine freie Lizenz. Verlink
 | 2020-LVR-Rheinland-Wissen-was-wirkt_Auszug.pdf — S. 7–8 | Wissen, was wirkt | Der bisherige direkte LVR-PDF-Pfad lieferte beim Live-Check HTTP 404; deshalb wird aktuell kein funktionierender Direkt-PDF-Link behauptet. |
 | 2022 Grundkonzept OKJA Outlaw gekürzt.pdf — S. 5–12 | Grundkonzept Offene Kinder- und Jugendarbeit | [offizielles PDF](https://www.outlaw-ggmbh.de/fileadmin/standorte/uebergreifende_dateien/2022_09_15_grundkonzept_okja.pdf) |
 
-## PT2 · Konzept, Prävention und Kindeswohlgefährdung
+## PT2 · Beziehungsgestaltung, Schutz & Prävention
 
 | Board-Datei | Quelle | Öffentliche PDF-Fassung / Status |
 |---|---|---|
@@ -59,7 +47,7 @@ Ein öffentlicher PDF-Link bedeutet nicht automatisch eine freie Lizenz. Verlink
 | 2024 Paritätisches JW NRW Arbeitshilfe Formen KWG.pdf — S. 52–53, 59–62 | Arbeitshilfe Schutzkonzepte | [offizielles PDF](https://www.pjw-nrw.de/fileadmin/EigeneDateien/Download/05-service/PJW_Arbeitshilfe_Schutzkonzepte_2024.pdf) |
 | PJW_Arbeitshilfe_Schutzkonzepte_2024.pdf — S. 29–34 | Arbeitshilfe Schutzkonzepte | [offizielles PDF](https://www.pjw-nrw.de/fileadmin/EigeneDateien/Download/05-service/PJW_Arbeitshilfe_Schutzkonzepte_2024.pdf) |
 
-## PT2 · Kindeswohlgefährdung und Krisenintervention
+## PT2 · Beziehungsgestaltung im Kinderschutzkontext
 
 | Board-Datei | Quelle | Öffentliche PDF-Fassung / Status |
 |---|---|---|
@@ -68,9 +56,9 @@ Ein öffentlicher PDF-Link bedeutet nicht automatisch eine freie Lizenz. Verlink
 
 ## Zusammenfassung
 
-- 24 eindeutige Board-PDF-Dateien insgesamt.
-- 13 Board-Dateien sind einer live geprüften öffentlichen PDF-Gesamt- oder Originalfassung zugeordnet.
-- Diese Zuordnungen führen auf 11 unterschiedliche öffentliche Direkt-PDF-URLs.
-- Für 11 Board-Dateien wird bewusst kein funktionierender öffentlicher Direkt-PDF-Link behauptet.
+- 17 eindeutige Board-PDF-Dateien insgesamt.
+- 8 Board-Dateien sind einer live geprüften öffentlichen PDF-Gesamt- oder Originalfassung zugeordnet.
+- Diese Zuordnungen führen auf 6 unterschiedliche öffentliche Direkt-PDF-URLs.
+- Für 9 Board-Dateien wird bewusst kein funktionierender öffentlicher Direkt-PDF-Link behauptet.
 
 Die vollständige technische Dateiliste mit SHA-256-Prüfsummen steht in [manifest.csv](manifest.csv).

@@ -5,21 +5,38 @@ import { createHash } from "node:crypto";
 const boardPath = process.argv[2] || "source-private/board.json";
 const outDir = process.argv[3] || "source-private/pdfs";
 const manifestPath = process.argv[4] || "source-private/pdf-manifest.json";
+const catalogPath = process.argv[5] || "data/sources.json";
 mkdirSync(outDir, { recursive: true });
 
 const board = JSON.parse(readFileSync(boardPath, "utf8"));
-const sourceLinks = (board.links || [])
-  .filter(x => /\/api\/files\/.*\.pdf(?:\?|$)/i.test(x.href || ""));
-const unique = [...new Map(sourceLinks.map(x => [x.href, x])).values()];
+const catalog = JSON.parse(readFileSync(catalogPath, "utf8"));
+const allowedNames = new Set(
+  (catalog.sources || [])
+    .flatMap(source => source.boardFiles || [])
+    .map(file => String(file.name || "").normalize("NFC"))
+    .filter(Boolean)
+);
+if (!allowedNames.size) throw new Error("catalog contains no board files");
 
 function safeName(href, fallback) {
   const u = new URL(href);
   let n = decodeURIComponent(basename(u.pathname));
   n = n.replace(/[\/\\\0]/g, "_").trim();
-  return n || fallback;
+  return (n || fallback).normalize("NFC");
 }
+
+const sourceLinks = (board.links || [])
+  .filter(x => /\/api\/files\/.*\.pdf(?:\?|$)/i.test(x.href || ""))
+  .filter(x => allowedNames.has(safeName(x.href, "")));
+const unique = [...new Map(sourceLinks.map(x => [x.href, x])).values()];
+const observedNames = new Set(unique.map((x, i) => safeName(x.href, `source-${i + 1}.pdf`)));
+const missing = [...allowedNames].filter(name => !observedNames.has(name));
+if (missing.length) {
+  throw new Error(`board capture misses catalog files: ${JSON.stringify(missing)}`);
+}
+
 async function one(link, index) {
-  const name = safeName(link.href, `source-${String(index+1).padStart(2,"0")}.pdf`);
+  const name = safeName(link.href, `source-${String(index + 1).padStart(2, "0")}.pdf`);
   const out = `${outDir}/${name}`;
   const res = await fetch(link.href, { redirect: "follow" });
   if (!res.ok) throw new Error(`${res.status} ${res.statusText} for ${name}`);
@@ -34,6 +51,7 @@ async function one(link, index) {
     source_url: link.href
   };
 }
+
 const results = [];
 for (let i = 0; i < unique.length; i += 4) {
   const batch = unique.slice(i, i + 4);
@@ -44,6 +62,10 @@ for (let i = 0; i < unique.length; i += 4) {
 writeFileSync(manifestPath, JSON.stringify({
   captured_at: new Date().toISOString(),
   count: results.length,
+  selection: {
+    catalog: catalogPath,
+    focus: "Beziehungsgestaltung in der OKJA"
+  },
   items: results
 }, null, 2) + "\n");
-console.log(JSON.stringify({ count: results.length, bytes: results.reduce((s,x)=>s+x.bytes,0) }));
+console.log(JSON.stringify({ count: results.length, bytes: results.reduce((s, x) => s + x.bytes, 0) }));
