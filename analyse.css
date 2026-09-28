@@ -484,3 +484,425 @@
   .study-notice { display: block; max-width: none; padding: 0; }
   .study-section { box-shadow: none; break-inside: avoid; margin: 0 0 16px; }
 }
+
+/* Vertiefungsbausteine */
+
+.deep-dive {
+  margin: 32px 0 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(246, 251, 250, 0.9), rgba(250, 248, 242, 0.9));
+}
+
+.deep-dive-head {
+  margin-bottom: 18px;
+  max-width: 900px;
+}
+
+.deep-dive-head h3 {
+  margin-top: 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.deep-dive-head > p:last-child {
+  color: var(--muted);
+}
+
+.deep-grid,
+.need-grid,
+.role-grid,
+.standard-grid,
+.module-grid,
+.indicator-grid,
+.sentence-grid,
+.pt1-map,
+.source-reading-key {
+  display: grid;
+  gap: 12px;
+}
+
+.deep-grid,
+.need-grid,
+.role-grid,
+.standard-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.module-grid,
+.indicator-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.deep-card,
+.need-card,
+.role-card,
+.standard-grid > section,
+.module-grid > section,
+.indicator-grid > section,
+.sentence-grid > section,
+.pt1-map > section,
+.source-reading-key > section {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+
+.deep-card,
+.need-card,
+.role-card {
+  padding: 18px;
+}
+
+.deep-card ul,
+.contrast-card ul,
+.deep-detail ul {
+  margin: 10px 0 0;
+  padding-left: 19px;
+}
+
+.deep-card li + li,
+.contrast-card li + li,
+.deep-detail li + li {
+  margin-top: 6px;
+}
+
+.deep-number {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 28px;
+  margin-bottom: 12px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--navy);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+}
+
+.logic-chain {
+  margin-top: 16px;
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--navy);
+  color: white;
+  font-size: 0.82rem;
+}
+
+.logic-chain span {
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.logic-chain b {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.need-card h4,
+.role-card h4,
+.standard-grid h4,
+.contrast-card h4,
+.exam-transfer h4 {
+  margin: 0 0 8px;
+}
+
+.need-definition {
+  min-height: 44px;
+  color: var(--muted);
+}
+
+.need-card dl {
+  margin: 16px 0 0;
+}
+
+.need-card dl > div {
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+
+.need-card dt {
+  margin-bottom: 3px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  color: var(--teal);
+}
+
+.need-card dd {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.four-lenses {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.four-lenses > section {
+  padding: 16px;
+  border-top: 4px solid var(--teal);
+  background: var(--paper);
+  border-radius: 10px;
+}
+
+.four-lenses p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.subheading {
+  margin: 28px 0 12px;
+  font-size: 1.05rem;
+}
+
+.micro-process,
+.decision-path {
+  margin: 12px 0 22px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.micro-process li,
+.decision-path li {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.5fr) minmax(0, 1.5fr);
+  gap: 15px;
+  padding: 12px 14px;
+  border-left: 4px solid var(--teal);
+  background: var(--paper);
+  border-radius: 0 10px 10px 0;
+}
+
+.micro-process span,
+.decision-path span {
+  color: var(--muted);
+}
+
+.contrast-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.contrast-card {
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.contrast-card.good {
+  border-top: 4px solid var(--teal);
+}
+
+.contrast-card.bad {
+  border-top: 4px solid var(--amber);
+}
+
+.indicator-grid > section,
+.module-grid > section,
+.sentence-grid > section,
+.pt1-map > section,
+.source-reading-key > section {
+  padding: 14px 15px;
+}
+
+.indicator-grid strong,
+.module-grid strong,
+.sentence-grid strong,
+.pt1-map strong,
+.source-reading-key strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.indicator-grid span,
+.module-grid span,
+.sentence-grid span,
+.pt1-map span,
+.source-reading-key span {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.role-law {
+  display: inline-flex;
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--navy);
+  font-weight: 850;
+  font-size: 0.75rem;
+}
+
+.role-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.role-card p:last-child {
+  margin-bottom: 0;
+}
+
+.deep-detail {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.deep-detail summary {
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 850;
+}
+
+.deep-detail > div {
+  padding: 0 16px 16px;
+  color: var(--muted);
+}
+
+.standard-grid > section {
+  position: relative;
+  padding: 18px 18px 18px 58px;
+}
+
+.standard-grid > section > span {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  font-weight: 850;
+}
+
+.standard-grid p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.87rem;
+}
+
+.tension-list.detailed section {
+  padding: 20px;
+}
+
+.tension-body {
+  display: grid;
+  gap: 7px;
+}
+
+.tension-body p {
+  margin: 0;
+}
+
+.exam-transfer {
+  display: grid;
+  gap: 10px;
+}
+
+.exam-transfer > section {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 14px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.exam-transfer > section > span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: var(--navy);
+  color: white;
+  font-weight: 850;
+}
+
+.exam-transfer p {
+  margin: 5px 0 0;
+  color: var(--muted);
+}
+
+.sentence-grid,
+.pt1-map,
+.source-reading-key {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 14px;
+}
+
+.source-reading-key {
+  margin: 22px 0;
+}
+
+@media (max-width: 1000px) {
+  .four-lenses {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .deep-dive {
+    padding: 16px;
+  }
+
+  .deep-grid,
+  .need-grid,
+  .role-grid,
+  .standard-grid,
+  .module-grid,
+  .indicator-grid,
+  .contrast-grid,
+  .sentence-grid,
+  .pt1-map,
+  .source-reading-key,
+  .four-lenses {
+    grid-template-columns: 1fr;
+  }
+
+  .micro-process li,
+  .decision-path li {
+    grid-template-columns: 1fr;
+  }
+
+  .need-definition {
+    min-height: 0;
+  }
+}
+
+@media print {
+  .deep-dive {
+    break-inside: auto;
+    box-shadow: none;
+  }
+
+  .deep-card,
+  .need-card,
+  .role-card,
+  .standard-grid > section,
+  .module-grid > section,
+  .indicator-grid > section,
+  .exam-transfer > section {
+    break-inside: avoid;
+  }
+}
