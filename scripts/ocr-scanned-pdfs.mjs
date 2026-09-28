@@ -18,7 +18,7 @@ for (const item of manifest.items || []) {
   }
 
   const input = join(pdfDir, item.name);
-  const work = mkdtempSync(join(tmpdir(), "kwg-ocr-"));
+  const work = mkdtempSync(join(tmpdir(), "okja-beziehung-ocr-"));
   const prefix = join(work, "page");
   const render = spawnSync("pdftoppm", ["-jpeg", "-r", "220", input, prefix], {
     encoding: "utf8",

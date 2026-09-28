@@ -5,149 +5,27 @@
     "id": "edupool-board",
     "label": "Oberquelle",
     "title": "Edupool-Board „Prüfung 2027 Sommer FS“",
-    "description": "Zentrale Zugangs- und Provenienzquelle; sämtliche hier erschlossenen Prüfungsunterlagen und Fachquellen sind dort enthalten oder verlinkt. Die einzelnen Werke bleiben die fachlichen Originalquellen.",
+    "description": "Zentrale Zugangs- und Provenienzquelle; die für Beziehungsgestaltung in der OKJA erschlossenen PT2-Prüfungsunterlagen und Fachquellen sind dort enthalten oder verlinkt. Die einzelnen Werke bleiben die fachlichen Originalquellen.",
     "url": "https://boards.edupool.cloud/s/Id-aVXBZEkn6RYOYY1aaEximB7QgB7SL0YOhxrezpdM"
   },
   "libraryGroups": [
     {
-      "id": "pt1",
-      "title": "PT1 · Informatik, Medien & digitale Bildung"
-    },
-    {
       "id": "pt2",
-      "title": "PT2 · Kindeswohl, OKJA, Schutz & Prävention"
+      "title": "PT2 · Beziehungsgestaltung in der OKJA"
     }
   ],
   "sources": [
     {
-      "id": "pt1-basiskompetenzen",
-      "section": "Prüfungsunterlagen",
-      "title": "Basiskompetenzen Prüfung Sommer 2027",
-      "citation": "PT1-Kompetenzbeschreibung des Prüfungsboards.",
-      "publicPdf": null,
-      "statusNote": "Kein belastbarer öffentlicher PDF-Link gefunden.",
-      "boardFiles": [
-        {
-          "name": "Basiskompetenzen Prüfung Sommer 2027.pdf",
-          "pages": null
-        }
-      ]
-    },
-    {
       "id": "operatorenliste",
       "section": "Prüfungsunterlagen",
       "title": "Entwurf Operatorenliste FS nBP",
-      "citation": "Operatorenliste des Prüfungsboards; in PT1 und PT2 verknüpft.",
+      "citation": "Operatorenliste des Prüfungsboards; für die PT2-Prüfungsvorbereitung verknüpft.",
       "publicPdf": null,
       "statusNote": "Kein belastbarer öffentlicher PDF-Link gefunden.",
       "boardFiles": [
         {
           "name": "Entwurf_Operatorenliste_FS_nBP.pdf",
           "pages": null
-        }
-      ]
-    },
-    {
-      "id": "fruehe-informatische-bildung",
-      "section": "PT1 · Informatik, Medien und digitale Bildung",
-      "libraryGroup": "pt1",
-      "title": "Frühe informatische Bildung",
-      "citation": "Bergner, N.; Hubwieser, P.; Köster, H. (2018): Frühe informatische Bildung – Ziele und Gelingensbedingungen für den Elementar- und Primarbereich. Band 9.",
-      "libraryDescription": "Bergner, Hubwieser & Köster · Stiftung „Haus der kleinen Forscher“",
-      "publicPdf": {
-        "label": "öffentliches PDF",
-        "url": "https://www.pedocs.de/volltexte/2019/17813/pdf/Bergner_et_al2019_Fruehe_informatische_Bildung.pdf"
-      },
-      "boardFiles": [
-        {
-          "name": "1. Bergner_et_al2019_Fruehe_informatische_Bildung.pdf",
-          "pages": "S. 28–29, 39–41, 274–277"
-        }
-      ]
-    },
-    {
-      "id": "bildungsleitlinien",
-      "section": "PT1 · Informatik, Medien und digitale Bildung",
-      "libraryGroup": "pt1",
-      "title": "Perspektive Kind – Hamburger Bildungsleitlinien",
-      "citation": "Freie und Hansestadt Hamburg (2024): Perspektive Kind – Hamburger Bildungsleitlinien für die pädagogische Arbeit in Kitas.",
-      "libraryDescription": "Freie und Hansestadt Hamburg · 2024",
-      "publicPdf": {
-        "label": "offizielles PDF",
-        "url": "https://dokumente.hamburg.de/resource/blob/35920/4d41e681db1c556340d235f366949ba0/bildungsleitlinien-data.pdf"
-      },
-      "boardFiles": [
-        {
-          "name": "2. Bildungsleitlinien.pdf",
-          "pages": "S. 58–61"
-        }
-      ]
-    },
-    {
-      "id": "wiff57-knauf",
-      "section": "PT1 · Informatik, Medien und digitale Bildung",
-      "libraryGroup": "pt1",
-      "title": "Förderung digitaler Kompetenzen",
-      "citation": "Knauf, Helen (2024): Förderung digitaler Kompetenzen von Kindern in Kindertageseinrichtungen. WiFF Expertise, Band 57.",
-      "libraryDescription": "Helen Knauf · WiFF Expertise 57 · 2024",
-      "publicPdf": {
-        "label": "offizielles PDF",
-        "url": "https://www.weiterbildungsinitiative.de/fileadmin/Redaktion/Publikationen/WiFF_Expertise57_Knauf_Web.pdf"
-      },
-      "boardFiles": [
-        {
-          "name": "3. WiFF_Expertise57_Knauf.pdf",
-          "pages": "S. 6–8, 31–35"
-        }
-      ]
-    },
-    {
-      "id": "minikim-2023",
-      "section": "PT1 · Informatik, Medien und digitale Bildung",
-      "libraryGroup": "pt1",
-      "title": "miniKIM-Studie 2023",
-      "citation": "Medienpädagogischer Forschungsverband Südwest (2023): miniKIM-Studie 2023. Kleinkinder und Medien.",
-      "libraryDescription": "Kleinkinder und Medien · mpfs/LFK",
-      "publicPdf": {
-        "label": "offizielles PDF",
-        "url": "https://www.lfk.de/fileadmin/PDFs/Publikationen/Studien/miniKIM-Studie/mini-kim-studie-2023.pdf"
-      },
-      "boardFiles": [
-        {
-          "name": "4. miniKIM2023.pdf",
-          "pages": "S. 10–12, 43–44"
-        }
-      ]
-    },
-    {
-      "id": "informatik-entdecken",
-      "section": "PT1 · Informatik, Medien und digitale Bildung",
-      "title": "Informatik entdecken – Mit und ohne Computer",
-      "citation": "Stiftung „Haus der kleinen Forscher“ (2017): Informatik entdecken – Mit und ohne Computer.",
-      "publicPdf": null,
-      "statusNote": "Der historische Direkt-PDF-Link leitet inzwischen auf die Stiftung/Campus-Materialseite um; daher wird kein funktionierender Direkt-PDF-Link behauptet.",
-      "boardFiles": [
-        {
-          "name": "5. Broschuere_Informatik_2017.pdf",
-          "pages": "S. 10–13, 15, 19–25, 34–39"
-        }
-      ]
-    },
-    {
-      "id": "beebot",
-      "section": "PT1 · Informatik, Medien und digitale Bildung",
-      "libraryGroup": "pt1",
-      "title": "Bee-Bot – Grundlagen & Methoden",
-      "citation": "Wiener Bildungsserver (2019): Bee-Bot – Grundlagen & Methoden für Kindergarten & Volksschule.",
-      "libraryDescription": "Wiener Bildungsserver · 2019",
-      "publicPdf": {
-        "label": "offizielles PDF",
-        "url": "https://lehrerweb.wien/fileadmin/lehrerweb-redakteure/Diverses/Downloads/Booklets/BeeBotBookletDownload.pdf"
-      },
-      "boardFiles": [
-        {
-          "name": "6. BeeBotBooklet.pdf",
-          "pages": "S. 4–10"
         }
       ]
     },
@@ -287,7 +165,7 @@
     },
     {
       "id": "pjw-schutzkonzepte",
-      "section": "PT2 · Konzept, Prävention und Kindeswohlgefährdung",
+      "section": "PT2 · Beziehungsgestaltung, Schutz & Prävention",
       "libraryGroup": "pt2",
       "title": "Arbeitshilfe Schutzkonzepte",
       "citation": "Paritätisches Jugendwerk NRW (2024): Arbeitshilfe. Schutzkonzepte in der Kinder- und Jugendarbeit.",
@@ -348,7 +226,7 @@
     },
     {
       "id": "kinderschutz-krisenintervention",
-      "section": "PT2 · Kindeswohlgefährdung und Krisenintervention",
+      "section": "PT2 · Beziehungsgestaltung im Kinderschutzkontext",
       "libraryGroup": "pt2",
       "title": "Gelingender Kinderschutz & Krisenintervention in der OKJA",
       "citation": "Gelingender Kinderschutz und Krisenintervention in der Offenen Kinder- und Jugendarbeit. Öffentliche Gesamtbroschüre des Landratsamts Breisgau-Hochschwarzwald (2023).",
@@ -367,7 +245,7 @@
     },
     {
       "id": "paritaetische-kinder-jugendschutz-2022",
-      "section": "PT2 · Kindeswohlgefährdung und Krisenintervention",
+      "section": "PT2 · Beziehungsgestaltung im Kinderschutzkontext",
       "libraryGroup": "pt2",
       "title": "Kinder- und Jugendschutz in Einrichtungen",
       "citation": "Der Paritätische Gesamtverband (2022): Kinder- und Jugendschutz in Einrichtungen, 5. Auflage.",

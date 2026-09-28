@@ -1,21 +1,28 @@
-# Themen- und Quellenmatrix
+# Beziehungsgestaltung in der OKJA – Themen- und Quellenmatrix
+
+**Überthema:** professionelle Beziehungsgestaltung in der Offenen Kinder- und Jugendarbeit.
+
+Die übrigen PT2-Inhalte werden von dieser Leitperspektive aus geordnet. Kinderschutz und Kindeswohlgefährdung sind dabei ein wichtiger Anwendungs- und Belastungskontext, nicht das übergeordnete Thema.
 
 | Prüfungsfeld | Kernfrage | Primäre Board-Quellen |
 |---|---|---|
-| PT1 – Informatik/Medien | Wie werden frühe informatische und digitale Kompetenzen pädagogisch gefördert? | Bergner et al.; Hamburger Bildungsleitlinien; Knauf; miniKIM 2023; „Informatik entdecken“; Bee-Bot |
-| PT2 – Beziehung | Wie bleibt professionelle Beziehung auch in Konflikt- und Gefährdungslagen tragfähig? | Borg-Laufs; Simon; Schröder; Dialogische Haltung; Aktives Zuhören |
-| PT2 – Konzeptentwicklung | Wie wird ein OKJA-Konzept fachlich entwickelt und an Prinzipien, Bedarfen und Wirkungen ausgerichtet? | Sturzenhecker/Deinet; AGJF; Outlaw |
-| PT2 – Prävention | Wie werden Schutz, Sucht-/Gewaltprävention und Beteiligung in den Alltag integriert? | Paritätisches Jugendwerk NRW; LVR; AGJF; Outlaw |
-| PT2 – Kindeswohlgefährdung | Was ist eine Kindeswohlgefährdung, welche Anhaltspunkte sind gewichtig und welche Schritte folgen? | KVJS; Paritätisches Jugendwerk NRW; Arbeitshilfe Kinder- und Jugendschutz |
-| PT2 – Recht/Verfahren | Welche Rolle spielt § 8a SGB VIII und wer wird wann beteiligt? | PT2-Basiskompetenzen; KVJS-Materialien; Paritätisches Jugendwerk NRW |
-| PT2 – Transfer | Wie werden Beziehung, Konzept und Verfahren in einer komplexen Handlung zusammengeführt? | alle drei PT2-Lernfeldbereiche plus Basiskompetenzen und Operatorenliste |
+| Beziehungsgestaltung | Wie werden professionelle Beziehungen in der OKJA aufgebaut, gehalten und auch in Konflikten tragfähig gestaltet? | Borg-Laufs; Simon; Schröder; Dialogische Haltung; Aktives Zuhören |
+| Psychische Grundbedürfnisse | Welche Funktionen können Verhalten, Rückzug, Widerstand oder Peerbindungen für Jugendliche erfüllen? | Borg-Laufs |
+| Haltung und Kommunikation | Wie werden Zuhören, Perspektivübernahme, Wertschätzung, Kongruenz, Machtreflexion und Konfliktfähigkeit praktisch? | Simon; Schröder; Dialogische Haltung; Aktives Zuhören |
+| OKJA-Prinzipien | Wie prägen Freiwilligkeit, Offenheit, Beteiligung, Lebenswelt- und Sozialraumorientierung die Beziehungsgestaltung? | AGJF; Outlaw; Schröder; Simon |
+| Konzeptentwicklung | Wie wird Beziehungsqualität in Zielen, Zuständigkeiten, Beteiligung, Angeboten und Reflexionsschleifen strukturell verankert? | Sturzenhecker/Deinet; AGJF; Outlaw |
+| Prävention und Beteiligung | Wie können tragfähige Beziehungen, Beteiligung, Beschwerdewege und alltagsintegrierte Angebote präventiv wirken? | Paritätisches Jugendwerk NRW; LVR; AGJF; Outlaw |
+| Kinderschutz als Anwendungskontext | Wie bleibt Beziehung transparent und beteiligungsorientiert, wenn gewichtige Schutzfragen auftreten? | KVJS; Paritätisches Jugendwerk NRW; Arbeitshilfe Kinder- und Jugendschutz |
+| Recht und Verfahren | Welche Rolle spielen § 8, § 8a und § 8b SGB VIII für Verantwortung, Beteiligung und fachliche Beratung? | PT2-Basiskompetenzen; KVJS-Materialien; Paritätisches Jugendwerk NRW |
+| Transfer | Wie werden Beziehung, Bedürfnisse, Konflikt, Schutz, Beteiligung und Konzeptentwicklung in einer komplexen Handlung verbunden? | alle PT2-Lernfeldbereiche plus Basiskompetenzen und Operatorenliste |
 
 ## Lernlogik
 
-Eine belastbare Prüfungsantwort sollte regelmäßig zwischen drei Ebenen unterscheiden:
+Eine belastbare Prüfungsantwort sollte regelmäßig zwischen vier Ebenen unterscheiden:
 
-1. **Wahrnehmen und verstehen:** Situation, Bedürfnisse, Beziehung, Anzeichen und Kontext erfassen.
-2. **Fachlich bewerten und planen:** Gefährdung, Ressourcen, Beteiligte, rechtliche Rahmenbedingungen, Ziele und Handlungsoptionen ordnen.
-3. **Handeln und reflektieren:** Kommunikation gestalten, Beteiligung sichern, Verfahren einhalten, Hilfen und Kooperation organisieren, Wirkung prüfen.
+1. **Beziehung wahrnehmen:** Kontakt, Vertrauen, Konflikt, Nähe und Distanz sowie die Perspektive des Jugendlichen erfassen.
+2. **Verhalten verstehen:** Bedürfnisse, Ressourcen, Entwicklungsaufgaben und mögliche Funktionen des Verhaltens als Hypothesen prüfen.
+3. **Professionell handeln:** Kommunikation gestalten, Beteiligung sichern, Grenzen transparent machen und – wenn Schutzfragen auftreten – das zuständige Verfahren einhalten.
+4. **Strukturell reflektieren:** Wirkung prüfen und Konsequenzen für Team, Konzept, Beteiligung, Beschwerdewege und Prävention ableiten.
 
-Diese Dreiteilung ist eine Lernstruktur dieses Repositorys und keine wörtliche Vorgabe des Boards.
+Diese Viererstruktur ist eine Lernarchitektur dieses Repositorys und keine wörtliche Vorgabe des Boards.

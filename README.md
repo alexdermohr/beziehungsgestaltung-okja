@@ -1,18 +1,21 @@
-# kindeswohlgefährdung
+# Beziehungsgestaltung in der OKJA
 
-Strukturierte Lern- und Quellenbasis für die **Prüfung 2027 Sommer FS** mit Schwerpunkt auf der Lernfeldprüfung PT2: Kindeswohlgefährdung, Beziehungsgestaltung und Konzeptentwicklung in der Offenen Kinder- und Jugendarbeit.
+Strukturierte Lern- und Quellenbasis für die **Prüfung 2027 Sommer FS** mit dem Überthema **Beziehungsgestaltung in der Offenen Kinder- und Jugendarbeit (OKJA)**.
 
-## Fallwerkstatt-Webseite
+Kindeswohlgefährdung, Schutzauftrag und Krisenintervention bleiben als wichtiger fachlicher **Anwendungs- und Belastungskontext** enthalten. Sie bestimmen aber nicht die Projektidentität: Der rote Faden ist, wie professionelle Beziehungen in der OKJA aufgebaut, gestaltet, reflektiert und auch unter Konflikt-, Krisen- und Schutzbedingungen tragfähig gehalten werden.
+
+## Lernwerkstatt-Webseite
 
 Die Repository-Wurzel enthält eine statische Prüfungsübungs-Webseite für die exemplarische Fallbearbeitung:
 
 - Einstieg über einen ausdrücklich fiktiven Fall aus der Offenen Kinder- und Jugendarbeit;
 - acht aufeinander aufbauende Arbeitsschritte vom Lagebild bis zum Prüfungstransfer als mögliches Klausurvorgehen;
-- am selben fiktiven Fall werden Beobachtung, fachliche Einordnung, Abwägung und begründete Handlung geübt;
+- Beziehungsaufbau, Kommunikation, psychische Grundbedürfnisse, Konfliktbearbeitung und professionelle Rollen als Leitperspektive;
+- Kinderschutz und § 8a SGB VIII als besonderer Anwendungskontext professioneller Beziehungsgestaltung;
+- Konzeptentwicklung, Beteiligung und Prävention als strukturelle Ebene der OKJA;
 - fachliche Kontrollpunkte und Quellenbezüge;
-- vollständige Board-Quellenbibliothek mit allen 22 fachlichen Quellen bzw. 24 lokal gesicherten Board-PDFs;
-- separate Seite `analyse.html` für vertiefte Textarbeit mit aufgedröselten Modellen, Gefährdungsformen, Rollen nach §§ 8/8a/8b SGB VIII, Konzeptbausteinen, Spannungsfeldern und fallbezogenem Klausurtransfer;
-- vereinfachte §-8a-Verfahrenslogik mit Links auf die amtlichen Gesetzestexte;
+- fokussierte PT2-Quellenbibliothek mit 15 fachlichen Quellen bzw. 17 geführten Board-PDFs;
+- separate Seite `analyse.html` für vertiefte Textarbeit mit Beziehungsmodellen, Grundbedürfnissen, Gesprächsführung, Spannungsfeldern, Kinderschutz-Kontext, Konzeptbausteinen und fallbezogenem Klausurtransfer;
 - lokale Notizen und Fortschrittsanzeige ohne Konto oder Server-Datenspeicherung;
 - Druckansicht für Arbeitsblätter bzw. PDF-Ausgabe.
 
@@ -24,8 +27,8 @@ Erfasst am 21.09.2026 aus dem bereitgestellten Edupool-Board; am 28.09.2026 erne
 
 **Oberquelle:** Edupool-Board „Prüfung 2027 Sommer FS“. URL und Provenienz werden ausschließlich im kanonischen Quellenkatalog `data/sources.json` gepflegt und daraus in Webseite und generierte Quellenverzeichnisse übernommen.
 
-- 35 von 35 Board-Karten strukturell erfasst;
-- 24 eindeutige PDF-Dateien lokal gesichert (39.168.539 Byte); der frische Download vom 28.09.2026 stimmt in Dateigröße und SHA-256 vollständig mit dem technischen Manifest überein;
+- 25 für den PT2-Schwerpunkt relevante Board-Karten fachlich berücksichtigt;
+- 17 für dieses Projekt relevante PDF-Dateien im technischen Manifest geführt (32.313.112 Byte); die Dateigrößen und SHA-256-Prüfsummen sind verifiziert;
 - alle PDFs lokal in Text überführt;
 - textbasierte PDFs mit `pdftotext`, Scan-PDFs ergänzend mit deutscher/englischer OCR;
 - Quelldateien und Volltranskripte liegen ausschließlich im lokalen, von Git ausgeschlossenen Verzeichnis `source-private/`.
@@ -40,7 +43,7 @@ Siehe [RECHTE.md](RECHTE.md).
 
 `data/sources.json` ist die kanonische Quelle für:
 
-- alle im technischen Manifest erfassten Board-PDF-Dateien;
+- alle im fokussierten technischen Manifest erfassten Board-PDF-Dateien;
 - bibliografische Angaben und prüfungsrelevante Seitenbereiche;
 - den Status öffentlicher PDF-Fassungen;
 - die unterschiedlichen öffentlichen Direkt-PDF-URLs;
@@ -57,7 +60,7 @@ Der Generator prüft dabei auch die vollständige Übereinstimmung mit `quellen/
 
 ## Inhalt
 
-- [Fallwerkstatt](index.html)
+- [Lernwerkstatt Beziehungsgestaltung](index.html)
 - [Vertieftes Textstudium](analyse.html)
 - [Prüfungsstruktur und Board-Inventar](docs/pruefungsstruktur.md)
 - [Themen- und Quellenmatrix](docs/themenmatrix.md)
@@ -65,18 +68,23 @@ Der Generator prüft dabei auch die vollständige Übereinstimmung mit `quellen/
 - [Öffentliche PDF-Links und Status](quellen/pdf-quellen.md) — generiert aus dem Quellenkatalog
 - [Transkriptionsstatus](docs/transkriptionsstatus.md)
 - `data/sources.json`: kanonischer Quellenkatalog
-- `quellen/manifest.csv`: technische Provenienz der 24 lokal gesicherten PDFs
+- `quellen/manifest.csv`: technische Provenienz der 17 für dieses Projekt geführten PDFs
 - `scripts/`: Erfassung, Download, Textgewinnung, OCR und Quellen-Dokumentgenerierung
 
-## Prüfungskern PT2
+## Projektkern: Beziehungsgestaltung in der OKJA
 
-Die Abschlussprüfung verbindet drei fachliche Linien:
+Das Repository ordnet die PT2-Inhalte unter einer leitenden Frage:
 
-1. **Beziehungsgestaltung:** tragfähige Beziehungen und Kommunikation mit Jugendlichen auch in Konflikten und bei Verdacht auf Kindeswohlgefährdung.
-2. **Konzeptentwicklung und Prävention:** qualitative Weiterentwicklung eines OKJA-Konzepts unter Einbezug von Sucht, Gewalt, Schutz und alltagsintegrierter Prävention.
-3. **Kinderschutz/Krisenintervention:** rechtliche Grundlagen, gewichtige Anhaltspunkte, Verfahrensschritte und kindeswohlorientierte Unterstützung einer Familie in einer Krisensituation.
+> Wie kann professionelle Beziehungsgestaltung in der OKJA auch unter Konflikt-, Krisen- und Schutzbedingungen tragfähig, beteiligungsorientiert und fachlich reflektiert bleiben?
 
-Die übergeordnete komplexe Handlung verbindet bei Verdacht auf Kindeswohlgefährdung in der OKJA gezielte Beziehungsgestaltung mit konzeptioneller Prävention und Unterstützung.
+Daraus ergeben sich vier miteinander verbundene Linien:
+
+1. **Beziehungsgestaltung als Leitthema:** tragfähige professionelle Beziehungen aufbauen, aufrechterhalten und in Konflikten bewusst gestalten.
+2. **Grundbedürfnisse, Haltung und Kommunikation:** jugendliches Verhalten verstehen, dialogisch arbeiten, aktiv zuhören und Macht sowie Nähe und Distanz reflektieren.
+3. **OKJA, Konzeptentwicklung und Prävention:** Beziehungsgestaltung in Prinzipien, Alltagsgestaltung, Beteiligung, Angeboten und Organisationsstrukturen verankern.
+4. **Kinderschutz und Krisenintervention als Anwendungskontext:** Gefährdungshinweise, Schutzauftrag, Beteiligung und Verfahren so bearbeiten, dass notwendiges Schutzhandeln und Beziehungsgestaltung nicht künstlich gegeneinander ausgespielt werden.
+
+Die offizielle PT2-Komplexhandlung des Prüfungsboards verknüpft Beziehungsgestaltung und konzeptionelle Gestaltung ausdrücklich mit dem Verdacht auf Kindeswohlgefährdung. Diese Prüfungsverknüpfung bleibt vollständig erhalten; die Lernarchitektur dieses Repositorys setzt jedoch **Beziehungsgestaltung in der OKJA** als übergeordneten fachlichen Rahmen.
 
 ## Lokale Nutzung der Webseite
 
