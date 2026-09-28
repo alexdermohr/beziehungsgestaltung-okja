@@ -173,65 +173,68 @@
     if (!container) return;
     container.replaceChildren();
 
-    for (const group of data.libraryGroups || []) {
-      const groupSources = data.sources.filter(
-        (source) => source.libraryGroup === group.id && source.publicPdf
-      );
+    const uniqueFiles = new Set(
+      data.sources.flatMap((source) => source.boardFiles.map((file) => file.name))
+    );
+    const publicCount = data.sources.filter((source) => source.publicPdf).length;
+
+    const coverage = makeElement("div", "source-coverage");
+    coverage.append(
+      makeElement("strong", "", `${data.sources.length} Fachquellen · ${uniqueFiles.size} Board-PDFs`),
+      makeElement(
+        "span",
+        "",
+        `${publicCount} Quellen zusätzlich mit belastbarer öffentlicher Fassung. Alle Board-PDFs wurden lokal gesichert; Fremdvolltexte werden nicht über diese öffentliche Seite gespiegelt.`
+      )
+    );
+    container.append(coverage);
+
+    const sections = [...new Set(data.sources.map((source) => source.section))];
+
+    for (const section of sections) {
+      const groupSources = data.sources.filter((source) => source.section === section);
       if (groupSources.length === 0) continue;
 
-      container.append(makeElement("h3", "pdf-group-title", group.title));
+      container.append(makeElement("h3", "pdf-group-title", section));
       const grid = makeElement("div", "pdf-grid");
 
       for (const source of groupSources) {
         const card = makeElement("article", "pdf-card");
-        card.append(makeElement("span", "pdf-status", source.publicPdf.label));
+        card.append(
+          makeElement(
+            "span",
+            source.publicPdf ? "pdf-status" : "pdf-status unavailable",
+            source.publicPdf ? source.publicPdf.label : "Board-PDF lokal gesichert"
+          )
+        );
         card.append(makeElement("h4", "", source.title));
-        card.append(makeElement("p", "", source.libraryDescription || source.citation));
+        card.append(makeElement("p", "", source.citation));
+
+        if (source.boardFiles.length) {
+          const files = makeElement("ul", "pdf-file-list");
+          for (const file of source.boardFiles) {
+            const suffix = file.pages ? ` — ${file.pages}` : "";
+            files.append(makeElement("li", "", `${file.name}${suffix}`));
+          }
+          card.append(files);
+        }
+
         if (source.statusNote) {
           card.append(makeElement("small", "pdf-note", source.statusNote));
         }
-        card.append(makeExternalLink("pdf-button", "PDF öffnen ↗", source.publicPdf.url));
+
+        const actions = makeElement("div", "pdf-card-actions");
+        if (source.publicPdf) {
+          actions.append(makeExternalLink("pdf-button", "Öffentliche Fassung ↗", source.publicPdf.url));
+        } else {
+          actions.append(makeExternalLink("pdf-button secondary-source", "Im Edupool-Board ↗", data.sourceRoot.url));
+        }
+        card.append(actions);
         grid.append(card);
       }
 
       container.append(grid);
     }
-
-    const unavailableSources = data.sources.filter((source) => !source.publicPdf);
-    const unavailableBoardFiles = unavailableSources.reduce(
-      (sum, source) => sum + source.boardFiles.length,
-      0
-    );
-
-    const unavailable = makeElement("div", "pdf-unavailable");
-    const body = makeElement("div");
-    body.append(makeElement("span", "pdf-status unavailable", "kein öffentlicher PDF-Link"));
-    body.append(
-      makeElement(
-        "h3",
-        "",
-        `${unavailableBoardFiles} Board-Dateien ohne belastbaren Direkt-PDF-Link`
-      )
-    );
-    body.append(
-      makeElement(
-        "p",
-        "",
-        "Diese Quellen bleiben im Katalog sichtbar, werden aber nicht durch ähnliche oder fremd hochgeladene PDFs ersetzt."
-      )
-    );
-
-    const list = makeElement("ul", "unavailable-source-list");
-    for (const source of unavailableSources) {
-      const item = makeElement("li");
-      item.append(makeElement("strong", "", source.title));
-      item.append(makeElement("small", "", source.statusNote));
-      list.append(item);
-    }
-    body.append(list);
-
-    unavailable.append(body, makeExternalLink("button secondary", "Status im Detail", SOURCE_STATUS_URL));
-    container.append(unavailable);
   }
 
   function renderSourceFailure(error) {
