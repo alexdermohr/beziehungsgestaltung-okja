@@ -68,6 +68,15 @@ const conceptSection = analysis.split('id="konzept"')[1]?.split('id="praevention
 for (const concept of ["Vier formale Qualitätsstandards", "Rechtlichen Auftrag konkretisieren", "Bedarfsbezogene Ziele operationalisieren", "überprüfbare Handlungsziele", "Partizipation ermöglichen", "Planen und reflektieren", "Fachliche Ausrichtung:"]) {
   assert(conceptSection.includes(concept), "Konzept-Qualitätskriterium fehlt: " + concept);
 }
+for (const concept of ["Sucht und Gewalt: das Einrichtungskonzept im Alltag anwenden", "Substanzkonsum ist nicht automatisch Abhängigkeit", "Beziehung & Beteiligung", "Schutz & Regeln", "Team & Netzwerk"]) {
+  assert(conceptSection.includes(concept), "PT2-Praxisfeld Sucht/Gewalt fehlt: " + concept);
+}
+assert(/data-source-ids="[^"]*pt2-basiskompetenzen/.test(conceptSection),
+  "PT2-Transfer Sucht/Gewalt benötigt einen eigenen Prüfungsquellenbezug");
+const examSection = analysis.split('id="pruefung"')[1]?.split('id="quellen"')[0] || "";
+for (const concept of ["Pädagogischer Handlungszyklus", "die veränderte Situation erneut betrachten", "verbindlich festgelegtes Phasenmodell"]) {
+  assert(examSection.includes(concept), "Prüfungsfeld pädagogischer Handlungszyklus fehlt: " + concept);
+}
 const preventionSection = analysis.split('id="praevention"')[1]?.split('id="schutz"')[0] || "";
 for (const example of ["Alltagsintegrierte Prävention", "Offener Treff", "Mitgestaltung", "Beratung & Übergänge"]) {
   assert(preventionSection.includes(example), "Praxisnahe Prävention fehlt: " + example);
