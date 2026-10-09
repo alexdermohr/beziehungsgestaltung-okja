@@ -65,7 +65,7 @@ for (const key of ["Containment", "Fröhlich-Gildhoff", "Konzeption", "Outlaw", 
   assert(analysis.includes(key), "Prüfungsrelevanter Inhalt fehlt: " + key);
 }
 const conceptSection = analysis.split('id="konzept"')[1]?.split('id="praevention"')[0] || "";
-for (const concept of ["Vier formale Qualitätsstandards", "Rechtlichen Auftrag konkretisieren", "Bedarfe ermitteln, Ziele überprüfen", "Partizipation ermöglichen", "Planen und reflektieren", "Fachliche Ausrichtung:"]) {
+for (const concept of ["Vier formale Qualitätsstandards", "Rechtlichen Auftrag konkretisieren", "Bedarfsbezogene Ziele operationalisieren", "überprüfbare Handlungsziele", "Partizipation ermöglichen", "Planen und reflektieren", "Fachliche Ausrichtung:"]) {
   assert(conceptSection.includes(concept), "Konzept-Qualitätskriterium fehlt: " + concept);
 }
 const preventionSection = analysis.split('id="praevention"')[1]?.split('id="schutz"')[0] || "";
