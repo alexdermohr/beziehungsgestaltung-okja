@@ -77,6 +77,9 @@ const examSection = analysis.split('id="pruefung"')[1]?.split('id="quellen"')[0]
 for (const concept of [
   "Sechs Denkschritte für eine schriftliche Fallantwort",
   "Sozialpädagogischer Handlungszyklus Hamburg: fünf Phasen",
+  "als didaktisches Prinzip",
+  "phasenspezifische Merkmale",
+  "variabel bearbeitet",
   "Wahrnehmen / Erleben",
   "Verstehen und Analysieren",
   "Entscheiden und Planen",
@@ -87,6 +90,8 @@ for (const concept of [
 ]) {
   assert(examSection.includes(concept), "Hamburger Handlungszyklus oder Abgrenzung fehlt: " + concept);
 }
+assert(!examSection.includes("konkretisiert die vollständige pädagogische Handlung"),
+  "HIBB-Zyklus darf nicht unbelegt mit der vollständigen Handlung gleichgesetzt werden");
 const fivePhaseMarkup = examSection.split('aria-label="Fünf Phasen des Sozialpädagogischen Handlungszyklus Hamburg">')[1]?.split('<p class="small-note">')[0] || "";
 assert.equal((fivePhaseMarkup.match(new RegExp("<span>0[1-5]</span>", "g")) || []).length, 5,
   "Der Hamburger Handlungszyklus muss exakt fünf Kernphasen ausweisen");
