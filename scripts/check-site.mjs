@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { existsSync, readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { runInNewContext } from "node:vm";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const pages = ["index.html", "analyse.html", "fallwerkstatt.html"];
@@ -67,3 +68,68 @@ assert(!analysis.includes("source-private/"), "Private PDFs dürfen nicht verlin
 
 for (const row of report) console.log("OK " + row);
 console.log("OK Acht Themenkapitel, 15 Quellengruppen und 17 Reader-Dokumente vollständig zugeordnet.");
+
+// Site-Skript ohne Fremdpakete mit kleinen DOM-Mocks ausführen.
+// Damit werden alte Lesezeichen und bibliografische Warnhinweise tatsächlich geprüft.
+const siteScript = readFileSync(resolve(root, "site.js"), "utf8");
+const baseUrl = "https://example.invalid/beziehungsgestaltung-okja/";
+
+function simulatePage(url, { sourceDirectory = false } = {}) {
+  const location = new URL(url, baseUrl);
+  let redirect = null;
+  location.replace = (url) => { redirect = String(url); };
+  class MockNode {
+    constructor(tag) {
+      this.tag = tag;
+      this.className = "";
+      this.textContent = "";
+      this.children = [];
+    }
+    append(...items) { this.children.push(...items); }
+    replaceChildren(...items) { this.children = [...items]; }
+  }
+  const directory = new MockNode("div");
+  const doc = {
+    querySelectorAll(selector) {
+      return selector === "[data-source-directory]" && sourceDirectory ? [directory] : [];
+    },
+    querySelector() { return null; },
+    createElement(tag) { return new MockNode(tag); }
+  };
+  runInNewContext(siteScript, {
+    URL,
+    window: { location },
+    document: doc,
+    console,
+    fetch: async () => ({ ok: true, json: async () => sources })
+  });
+  return { redirect: () => redirect, directory };
+}
+
+for (const [legacy, expected] of [
+  ["index.html#schritt-4", "fallwerkstatt.html#schritt-4"],
+  ["#schritt-1", "fallwerkstatt.html#schritt-1"],
+  ["index.html#pdf-quellen", "fallwerkstatt.html#pdf-quellen"],
+  ["analyse.html#gefaehrdung", "analyse.html#schutz"],
+  ["analyse.html#quellenapparat", "analyse.html#quellen"],
+  ["analyse.html#spannungen", "index.html#bridge-heading"]
+]) {
+  const target = simulatePage(legacy).redirect();
+  assert.equal(target, new URL(expected, baseUrl).href, "Alter Link muss weiterleiten: " + legacy);
+}
+assert.equal(simulatePage("index.html#themen").redirect(), null, "Aktuellen Anker nicht umleiten");
+
+const { directory } = simulatePage("analyse.html", { sourceDirectory: true });
+// Nach zwei await-Schritten muss der asynchrone Katalog geladen und gerendert sein.
+await new Promise((resolve) => setImmediate(resolve));
+const cards = directory.children[0]?.children || [];
+assert.equal(cards.length, 15, "Genau 15 Quellengruppen gerendert");
+for (const sourceId of ["kinderschutz-krisenintervention", "lvr-wissen-was-wirkt"]) {
+  const source = sources.sources.find((s) => s.id === sourceId);
+  assert(source?.statusNote, "Testquelle muss spezifische Provenienznotiz besitzen: " + sourceId);
+  const card = cards.find((node) => node.children.some((c) => c.tag === "h3" && c.textContent === source.title));
+  assert(card, "Fehlende Quellenkarte: " + sourceId);
+  assert(card.children.some((c) => c.className === "source-note" && c.textContent === source.statusNote),
+    "Hinweis wurde bei " + sourceId + " nicht wiedergegeben");
+}
+console.log("OK Alte URL-Anker, vollständige Quellenrendering-Ausgabe und spezifische Provenienz-Hinweise.");

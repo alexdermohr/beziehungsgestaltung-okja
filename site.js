@@ -1,6 +1,27 @@
 (() => {
   "use strict";
 
+  // Bestehende Lesezeichen aus der früheren Fallwerkstatt erhalten.
+  const legacyCaseHashes = new Set(["#lernstrecke", "#ablauf", "#pdf-quellen", "#source-root", "#completion-panel"]);
+  const currentHash = window.location.hash;
+  const isOverview = window.location.pathname.endsWith("/") || window.location.pathname.endsWith("/index.html");
+  if (isOverview && (/^#schritt-[1-8]$/.test(currentHash) || legacyCaseHashes.has(currentHash))) {
+    window.location.replace(new URL("fallwerkstatt.html" + currentHash, window.location.href).href);
+    return;
+  }
+  const legacyStudyHashes = {
+    "#synthese": "#okja",
+    "#gefaehrdung": "#schutz",
+    "#verfahren": "#schutz",
+    "#spannungen": "index.html#bridge-heading",
+    "#klausur": "#pruefung",
+    "#quellenapparat": "#quellen"
+  };
+  if (window.location.pathname.endsWith("/analyse.html") && legacyStudyHashes[currentHash]) {
+    window.location.replace(new URL(legacyStudyHashes[currentHash], window.location.href).href);
+    return;
+  }
+
   const DATA_URL = "data/sources.json";
   const SOURCE_FALLBACK = "quellen/quellenverzeichnis.md";
   const placeholders = [...document.querySelectorAll("[data-source-ids]")];
@@ -40,6 +61,7 @@
         }
         const pageInfo = [...new Set((source.boardFiles || []).map((file) => file.pages).filter(Boolean))].join("; ");
         if (pageInfo) item.append(element("span", "muted", " · " + pageInfo));
+        if (source.statusNote) item.append(element("span", "source-note", source.statusNote));
         list.append(item);
       }
       const boardItem = element("li");
@@ -64,11 +86,10 @@
         card.append(files);
         const actions = element("div", "source-links");
         if (source.publicPdf) {
-          actions.append(link("Öffentliche Originalfassung ↗", source.publicPdf.url, true));
-        } else {
-          actions.append(element("span", "muted", "Keine verlässlich öffentliche Originalfassung hinterlegt."));
+          actions.append(link("Öffentliche Gesamt- oder Originalfassung ↗", source.publicPdf.url, true));
         }
         actions.append(link("Edupool-Board ↗", data.sourceRoot.url, true));
+        if (source.statusNote) card.append(element("p", "source-note", source.statusNote));
         card.append(actions);
         grid.append(card);
       }
