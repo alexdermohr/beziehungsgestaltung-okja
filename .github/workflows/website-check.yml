@@ -1,0 +1,32 @@
+name: Website prüfen
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  website:
+    name: Inhalte und Navigation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: JavaScript prüfen
+        run: |
+          node --check site.js
+          node --check app.js
+          node --check scripts/check-site.mjs
+      - name: Inhalte, Links und Readerquellen prüfen
+        run: node scripts/check-site.mjs
+      - name: Generierte Quellenverzeichnisse abgleichen
+        run: |
+          node scripts/render-source-docs.mjs
+          git diff --exit-code -- quellen/pdf-quellen.md quellen/quellenverzeichnis.md

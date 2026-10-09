@@ -311,7 +311,7 @@
       heading.focus({ preventScroll: true });
     }
 
-    history.replaceState(null, "", `#schritt-${stepNumber}`);
+    if (options.updateHash !== false) history.replaceState(null, "", `#schritt-${stepNumber}`);
   }
 
   function updateProgress() {
@@ -423,7 +423,9 @@
   const initialHash = location.hash.match(/^#schritt-(\d+)$/);
   const requestedStep = initialHash ? Number(initialHash[1]) : state.currentStep || 1;
   const initialStep = requestedStep >= 1 && requestedStep <= totalSteps ? requestedStep : 1;
+  // Direktlinks auf Bibliothek oder Ablauf beim Seitenstart nicht überschreiben.
+  const keepInitialHash = !initialHash && location.hash && document.getElementById(location.hash.slice(1));
   updateProgress();
-  showStep(initialStep, { scroll: false });
+  showStep(initialStep, { scroll: false, updateHash: !keepInitialHash });
   loadAndRenderSources();
 })();
