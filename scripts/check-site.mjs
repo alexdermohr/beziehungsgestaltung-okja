@@ -64,6 +64,14 @@ assert.equal(missing.length, 0, "Inhalte ohne Kapitelnachweis: " + missing.map((
 for (const key of ["Containment", "Fröhlich-Gildhoff", "Konzeption", "Outlaw", "87 %", "Aktives Zuhören"]) {
   assert(analysis.includes(key), "Prüfungsrelevanter Inhalt fehlt: " + key);
 }
+const conceptSection = analysis.split('id="konzept"')[1]?.split('id="praevention"')[0] || "";
+for (const concept of ["Vier formale Qualitätsstandards", "Rechtlichen Auftrag konkretisieren", "Bedarfsbezogene Ziele operationalisieren", "überprüfbare Handlungsziele", "Partizipation ermöglichen", "Planen und reflektieren", "Fachliche Ausrichtung:"]) {
+  assert(conceptSection.includes(concept), "Konzept-Qualitätskriterium fehlt: " + concept);
+}
+const preventionSection = analysis.split('id="praevention"')[1]?.split('id="schutz"')[0] || "";
+for (const example of ["Alltagsintegrierte Prävention", "Offener Treff", "Mitgestaltung", "Beratung & Übergänge"]) {
+  assert(preventionSection.includes(example), "Praxisnahe Prävention fehlt: " + example);
+}
 assert(!analysis.includes("source-private/"), "Private PDFs dürfen nicht verlinkt werden");
 
 for (const row of report) console.log("OK " + row);
