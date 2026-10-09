@@ -85,15 +85,35 @@ function simulatePage(url, { sourceDirectory = false } = {}) {
       this.textContent = "";
       this.children = [];
     }
-    append(...items) { this.children.push(...items); }
-    replaceChildren(...items) { this.children = [...items]; }
+    append(...items) {
+      for (const item of items) {
+        if (item && typeof item === "object") item.parentNode = this;
+        this.children.push(item);
+      }
+    }
+    replaceChildren(...items) {
+      this.children = [];
+      this.append(...items);
+    }
+    closest(tag) {
+      for (let node = this; node; node = node.parentNode) {
+        if (node.tag === tag) return node;
+      }
+      return null;
+    }
+    scrollIntoView() { this.scrolled = true; }
   }
   const directory = new MockNode("div");
+  const disclosure = new MockNode("details");
+  disclosure.append(directory);
+  const findById = (node, id) => node.id === id ? node :
+    (node.children || []).map((child) => findById(child, id)).find(Boolean) || null;
   const doc = {
     querySelectorAll(selector) {
       return selector === "[data-source-directory]" && sourceDirectory ? [directory] : [];
     },
     querySelector() { return null; },
+    getElementById(id) { return findById(disclosure, id); },
     createElement(tag) { return new MockNode(tag); }
   };
   runInNewContext(siteScript, {
@@ -103,13 +123,14 @@ function simulatePage(url, { sourceDirectory = false } = {}) {
     console,
     fetch: async () => ({ ok: true, json: async () => sources })
   });
-  return { redirect: () => redirect, directory };
+  return { redirect: () => redirect, directory, disclosure };
 }
 
 for (const [legacy, expected] of [
   ["index.html#schritt-4", "fallwerkstatt.html#schritt-4"],
   ["#schritt-1", "fallwerkstatt.html#schritt-1"],
   ["index.html#pdf-quellen", "fallwerkstatt.html#pdf-quellen"],
+  ["analyse.html#textstudium", "analyse.html#inhalt"],
   ["analyse.html#gefaehrdung", "analyse.html#schutz"],
   ["analyse.html#quellenapparat", "analyse.html#quellen"],
   ["analyse.html#spannungen", "index.html#bridge-heading"]
@@ -137,4 +158,10 @@ for (const sourceId of ["kinderschutz-krisenintervention", "lvr-wissen-was-wirkt
   assert(card.children.some((c) => c.className === "source-note" && c.textContent === source.statusNote),
     "Hinweis wurde bei " + sourceId + " nicht wiedergegeben");
 }
+const linkedSource = simulatePage("analyse.html#quelle-aktives-zuhoeren", { sourceDirectory: true });
+await new Promise((resolve) => setImmediate(resolve));
+const requestedSource = linkedSource.directory.children[0].children.find((card) => card.id === "quelle-aktives-zuhoeren");
+assert(requestedSource, "Alter Quellen-Direktlink muss wieder eine konkrete Quellenkarte treffen");
+assert.equal(linkedSource.disclosure.open, true, "Bibliografie muss für alten Direktlink aufgeklappt werden");
+assert.equal(requestedSource.scrolled, true, "Alte Quellenkarte muss nach Laden sichtbar angesteuert werden");
 console.log("OK Alte URL-Anker, vollständige Quellenrendering-Ausgabe und spezifische Provenienz-Hinweise.");

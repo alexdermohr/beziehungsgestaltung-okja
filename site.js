@@ -10,6 +10,7 @@
     return;
   }
   const legacyStudyHashes = {
+    "#textstudium": "#inhalt",
     "#synthese": "#okja",
     "#gefaehrdung": "#schutz",
     "#verfahren": "#schutz",
@@ -77,6 +78,7 @@
       const grid = element("div", "source-directory-grid");
       for (const source of data.sources) {
         const card = element("article", "source-entry");
+        card.id = "quelle-" + source.id;
         card.append(element("h3", "", source.title));
         card.append(element("p", "", source.citation));
         const files = element("ul");
@@ -94,6 +96,17 @@
         grid.append(card);
       }
       container.replaceChildren(grid);
+    }
+
+    // Alte Quellen-Direktlinks bleiben auch bei asynchron geladenem Katalog erhalten.
+    const requestedSourceId = window.location.hash.slice(1);
+    if (requestedSourceId.startsWith("quelle-")) {
+      const sourceCard = document.getElementById(requestedSourceId);
+      if (sourceCard) {
+        const directoryDisclosure = sourceCard.closest("details");
+        if (directoryDisclosure) directoryDisclosure.open = true;
+        sourceCard.scrollIntoView({ block: "start" });
+      }
     }
   }
 
