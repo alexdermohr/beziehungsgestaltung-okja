@@ -74,9 +74,22 @@ for (const concept of ["Sucht und Gewalt: das Einrichtungskonzept im Alltag anwe
 assert(/data-source-ids="[^"]*pt2-basiskompetenzen/.test(conceptSection),
   "PT2-Transfer Sucht/Gewalt benötigt einen eigenen Prüfungsquellenbezug");
 const examSection = analysis.split('id="pruefung"')[1]?.split('id="quellen"')[0] || "";
-for (const concept of ["Pädagogischer Handlungszyklus", "die veränderte Situation erneut betrachten", "verbindlich festgelegtes Phasenmodell"]) {
-  assert(examSection.includes(concept), "Prüfungsfeld pädagogischer Handlungszyklus fehlt: " + concept);
+for (const concept of [
+  "Sechs Denkschritte für eine schriftliche Fallantwort",
+  "Sozialpädagogischer Handlungszyklus Hamburg: fünf Phasen",
+  "Wahrnehmen / Erleben",
+  "Verstehen und Analysieren",
+  "Entscheiden und Planen",
+  "Umsetzen / Interagieren",
+  "Reflektieren und Evaluieren",
+  "Schreibgliederung für die Klausur",
+  "HIBB-Handreichung, Abschnitt 2.4"
+]) {
+  assert(examSection.includes(concept), "Hamburger Handlungszyklus oder Abgrenzung fehlt: " + concept);
 }
+const fivePhaseMarkup = examSection.split('aria-label="Fünf Phasen des Sozialpädagogischen Handlungszyklus Hamburg">')[1]?.split('<p class="small-note">')[0] || "";
+assert.equal((fivePhaseMarkup.match(new RegExp("<span>0[1-5]</span>", "g")) || []).length, 5,
+  "Der Hamburger Handlungszyklus muss exakt fünf Kernphasen ausweisen");
 const preventionSection = analysis.split('id="praevention"')[1]?.split('id="schutz"')[0] || "";
 for (const example of ["Alltagsintegrierte Prävention", "Offener Treff", "Mitgestaltung", "Beratung & Übergänge"]) {
   assert(preventionSection.includes(example), "Praxisnahe Prävention fehlt: " + example);
