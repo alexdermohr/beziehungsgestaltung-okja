@@ -118,6 +118,11 @@ for (const [legacy, expected] of [
   assert.equal(target, new URL(expected, baseUrl).href, "Alter Link muss weiterleiten: " + legacy);
 }
 assert.equal(simulatePage("index.html#themen").redirect(), null, "Aktuellen Anker nicht umleiten");
+const fallwerkstattScript = readFileSync(resolve(root, "app.js"), "utf8");
+assert(fallwerkstattScript.includes("options.updateHash !== false"),
+  "Fallwerkstatt muss die Erhaltung direkter Quellenanker erlauben");
+assert(fallwerkstattScript.includes("updateHash: !keepInitialHash"),
+  "Fallwerkstatt darf alte Quellen-/Ablaufanker beim Einstieg nicht überschreiben");
 
 const { directory } = simulatePage("analyse.html", { sourceDirectory: true });
 // Nach zwei await-Schritten muss der asynchrone Katalog geladen und gerendert sein.
