@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktive Lernstrecke zur Prüfungsvorbereitung: Beziehungsgestaltung in der Offenen Kinder- und Jugendarbeit, psychische Grundbedürfnisse, Kommunikation, Konflikt, Konzeptentwicklung und Kinderschutz als Anwendungskontext.">
+  <title>Fallwerkstatt · Beziehungsgestaltung in der OKJA</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#lernstrecke">Direkt zur Lernstrecke</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Zur Themenübersicht Beziehungsgestaltung">
+        <span class="brand-kicker">Prüfung 2027 · FS</span>
+        <span class="brand-title">Beziehungsgestaltung in der OKJA</span>
+      </a>
+      <div class="header-actions">
+        <a class="button ghost" href="index.html">Themenübersicht</a>
+        <a class="button ghost" href="analyse.html">Themen vertiefen</a>
+        <button class="button ghost" id="print-button" type="button">Drucken</button>
+        <button class="button ghost danger" id="reset-button" type="button">Fortschritt löschen</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="hero-copy">
+        <p class="eyebrow">PT2 · Beziehungsgestaltung in der OKJA</p>
+        <h1>Professionelle Beziehungen gestalten – auch wenn Situationen schwierig werden.</h1>
+        <p class="lead">
+          <strong>Im Mittelpunkt steht professionelle Beziehungsgestaltung in der Offenen Kinder- und Jugendarbeit.</strong>
+          Psychische Grundbedürfnisse, dialogische Haltung, Kommunikation, Konflikte, Beteiligung und Konzeptentwicklung
+          bilden dafür die fachliche Grundlage. Kinderschutz, Gefährdungseinschätzung und § 8a SGB VIII werden als
+          besonderer Anwendungs- und Belastungskontext professioneller Beziehungsarbeit behandelt.
+          Am fiktiven Fall Mika wird ein übertragbares Vorgehen für Fallaufgaben in der Klausur geübt.
+        </p>
+        <div class="hero-actions">
+          <button class="button primary" type="button" data-goto="1">Fall starten</button>
+          <a class="button secondary" href="analyse.html">Themenwissen nachschlagen</a>
+          <a class="button secondary" href="#ablauf">Vorgehen ansehen</a>
+        </div>
+        <p class="privacy-note">
+          Die Seite speichert Fortschritt und Notizen nur in diesem Browser. Keine echten Namen,
+          realen Falldaten oder personenbezogenen Informationen eintragen.
+        </p>
+      </div>
+
+      <aside class="case-card" aria-labelledby="falltitel">
+        <div class="case-card-head">
+          <span class="case-label">Didaktischer Fall · fiktiv</span>
+          <span class="case-time">ca. 90–120 Min.</span>
+        </div>
+        <h2 id="falltitel">Mika, 15, im Haus der Jugend</h2>
+        <p>
+          Mika kommt seit etwa einem halben Jahr regelmäßig in ein Haus der Jugend. In den letzten
+          Wochen zieht er sich häufiger zurück, reagiert auf kleine Konflikte schnell gereizt und
+          bleibt manchmal bis kurz vor Schließung.
+        </p>
+        <p>
+          Nach einem Streit mit einem anderen Jugendlichen spricht eine Fachkraft ruhig mit ihm.
+          Dabei fällt ihr ein Bluterguss am Oberarm auf. Mika sagt, der Partner seiner Mutter habe
+          ihn vor zwei Tagen „richtig fest gepackt“. Zu Hause werde viel geschrien. Manchmal schlafe
+          er bei Freunden, wenn es ihm zu viel werde. Er bittet: „Sag das bitte nicht meiner Mutter.
+          Dann wird alles nur schlimmer.“
+        </p>
+        <p>
+          Mika erzählt außerdem, dass seine siebenjährige Schwester die Auseinandersetzungen häufig
+          mitbekommt. Im Team gehen die Einschätzungen auseinander: Eine Person hält die Situation
+          für ernst, eine andere für einen typischen Familienkonflikt. Ein Schutzablauf existiert,
+          ist aber nicht allen Mitarbeitern präsent.
+        </p>
+      </aside>
+    </section>
+
+    <section class="exam-strip" id="ablauf" aria-label="Exemplarisches Vorgehen für die Klausur">
+      <div>
+        <strong>Leitperspektive Beziehung</strong>
+        <span>Die acht Schritte fragen durchgehend, wie Beziehung wahrgenommen, gestaltet, begrenzt, geschützt und reflektiert wird.</span>
+      </div>
+      <div>
+        <strong>Bearbeitungslogik</strong>
+        <span>Beziehungs- und Sachverhaltsebene erfassen → Bedürfnisse und Konflikte deuten → Schutzfragen prüfen → transparent handeln → Beziehung weitergestalten</span>
+      </div>
+    </section>
+
+    <section class="workspace" id="lernstrecke">
+      <aside class="step-nav" aria-label="Lernschritte">
+        <div class="progress-card">
+          <div class="progress-copy">
+            <span>Fortschritt</span>
+            <strong id="progress-label">0 von 8</strong>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+        </div>
+
+        <nav>
+          <ol class="step-list" id="step-list">
+            <li><button type="button" data-goto="1"><span>01</span> Situation sortieren</button></li>
+            <li><button type="button" data-goto="2"><span>02</span> Beziehung gestalten</button></li>
+            <li><button type="button" data-goto="3"><span>03</span> Bedürfnisse & Ressourcen</button></li>
+            <li><button type="button" data-goto="4"><span>04</span> Schutzkontext einschätzen</button></li>
+            <li><button type="button" data-goto="5"><span>05</span> Schutzverfahren einordnen</button></li>
+            <li><button type="button" data-goto="6"><span>06</span> Hilfen & Beteiligung</button></li>
+            <li><button type="button" data-goto="7"><span>07</span> Konzept & Prävention</button></li>
+            <li><button type="button" data-goto="8"><span>08</span> Prüfungstransfer</button></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <div class="steps">
+        <article class="step active" data-step="1" id="schritt-1">
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 1 · Wahrnehmen</p>
+              <h2>Was ist im Sachverhalt wirklich belegt?</h2>
+            </div>
+            <span class="phase-badge">Lagebild</span>
+          </header>
+
+          <div class="task-grid">
+            <section class="task-card">
+              <h3>Auftrag A — Fakten sichern</h3>
+              <p>Nur Beobachtbares oder ausdrücklich Gesagtes festhalten. Keine Diagnose, keine Absicht unterstellen.</p>
+              <ul class="prompt-list">
+                <li>Welche konkreten Veränderungen werden beschrieben?</li>
+                <li>Welche Aussage macht Mika selbst?</li>
+                <li>Welche Informationen betreffen die Schwester?</li>
+                <li>Welche Informationen fehlen noch?</li>
+              </ul>
+            </section>
+            <section class="task-card accent">
+              <h3>Auftrag B — Deutungen markieren</h3>
+              <p>Mindestens drei denkbare Erklärungen formulieren, ohne eine vorschnell zur Wahrheit zu erklären.</p>
+              <p class="micro-example"><strong>Beispiel:</strong> „Mika bleibt lange“ ist Beobachtung. „Er will nicht nach Hause“ ist zunächst eine Hypothese.</p>
+            </section>
+          </div>
+
+          <section class="step-sources" data-step-sources="1" aria-label="Quellen für Schritt 1">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-1">Arbeitsnotizen</label>
+          <textarea class="notes" id="notes-1" data-note="1" rows="7" placeholder="Fakten · offene Fragen · Hypothesen"></textarea>
+
+          <details class="hint">
+            <summary>Fachlicher Kontrollpunkt</summary>
+            <div>
+              <p>Gute Fallarbeit beginnt mit einer Trennung von <strong>Beobachtung</strong>, <strong>Deutung</strong> und <strong>Bewertung</strong>. Das verhindert, dass ein erster Eindruck den gesamten weiteren Prozess bestimmt.</p>
+            </div>
+          </details>
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="1"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="2">Weiter zu Beziehung</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="2" id="schritt-2" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 2 · Beziehung</p>
+              <h2>Wie bleibt das Gespräch offen und tragfähig?</h2>
+            </div>
+            <span class="phase-badge">Kommunikation</span>
+          </header>
+
+          <div class="task-grid">
+            <section class="task-card">
+              <h3>Auftrag A — Gesprächseinstieg</h3>
+              <p>Zwei Sätze formulieren, mit denen die Fachkraft anknüpfen könnte, ohne Mika zu verhören oder vorschnell etwas zu versprechen.</p>
+              <ul class="prompt-list">
+                <li>dialogische Haltung</li>
+                <li>aktives Zuhören</li>
+                <li>Transparenz über die eigene Rolle</li>
+                <li>keine Zusage absoluter Geheimhaltung</li>
+              </ul>
+            </section>
+            <section class="task-card">
+              <h3>Auftrag B — Reaktionen prüfen</h3>
+              <div class="choice-list" data-choice-group="conversation">
+                <button type="button" class="choice" data-feedback="good">„Ich höre, dass du Sorge hast, was nach dem Gespräch passiert. Erzähl mir, was dir gerade am wichtigsten ist.“</button>
+                <button type="button" class="choice" data-feedback="weak">„Du musst mir jetzt genau sagen, ob dein Stiefvater dich schlägt.“</button>
+                <button type="button" class="choice" data-feedback="mixed">„Ich behalte alles für mich, egal was du mir erzählst.“</button>
+              </div>
+              <p class="choice-feedback" aria-live="polite"></p>
+            </section>
+          </div>
+
+          <section class="conversation-quick" aria-labelledby="conversation-quick-title">
+            <div class="quick-visual-head">
+              <p class="eyebrow">Gesprächsführung im Dreischritt</p>
+              <h3 id="conversation-quick-title">Erst klären, dann verstehen, dann gemeinsam weitergehen</h3>
+            </div>
+            <div class="conversation-quick-grid">
+              <section>
+                <span class="quick-step-number">1</span>
+                <h4>Anlass & Ziel</h4>
+                <p>Beobachtungen sortieren, Wissenslücken benennen und klären, was das Gespräch leisten soll. Verstehen und Beziehungsarbeit kommen vor vorschnellen Lösungen.</p>
+              </section>
+              <section class="quick-focus">
+                <span class="quick-step-number">2</span>
+                <h4>Prozess gestalten</h4>
+                <p><strong>Haltung:</strong> Wertschätzung, Empathie und Kongruenz. <strong>Techniken:</strong> offene Fragen, paraphrasieren und Gefühle validieren.</p>
+              </section>
+              <section>
+                <span class="quick-step-number">3</span>
+                <h4>Abschluss & Ausblick</h4>
+                <p>Gemeinsames Verständnis sichern, hilfreiche nächste Schritte vereinbaren und weitere Gespräche offenhalten.</p>
+              </section>
+            </div>
+          </section>
+
+          <section class="step-sources" data-step-sources="2" aria-label="Quellen für Schritt 2">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-2">Gesprächsvorschlag</label>
+          <textarea class="notes" id="notes-2" data-note="2" rows="7" placeholder="Einstieg · Fragen · Transparenz · Grenzen der Vertraulichkeit"></textarea>
+
+          <details class="hint">
+            <summary>Fachlicher Kontrollpunkt</summary>
+            <div>
+              <p>Beziehungsarbeit ist hier kein Gegensatz zum Schutzauftrag. Sie ist ein Mittel, um Informationen, Beteiligung und Hilfen überhaupt möglich zu machen. Gleichzeitig darf Beziehung nicht dazu führen, notwendige Schutzschritte zu vermeiden.</p>
+            </div>
+          </details>
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="2"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="3">Weiter zu Bedürfnissen</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="3" id="schritt-3" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 3 · Verstehen</p>
+              <h2>Welche Bedürfnisse, Belastungen und Ressourcen sind sichtbar?</h2>
+            </div>
+            <span class="phase-badge">Grundbedürfnisse</span>
+          </header>
+
+          <div class="three-columns">
+            <section class="task-card">
+              <h3>Bedürfnisse</h3>
+              <p>Welche psychischen Grundbedürfnisse könnten berührt sein? Am Fall begründen statt nur Begriffe aufzuzählen.</p>
+            </section>
+            <section class="task-card">
+              <h3>Belastungen</h3>
+              <p>Welche Faktoren könnten Mikas Sicherheit, Entwicklung oder Handlungsfähigkeit beeinträchtigen?</p>
+            </section>
+            <section class="task-card">
+              <h3>Ressourcen</h3>
+              <p>Welche Schutzfaktoren sind schon vorhanden? Wer oder was könnte zusätzlich stabilisieren?</p>
+            </section>
+          </div>
+
+          <section class="step-sources" data-step-sources="3" aria-label="Quellen für Schritt 3">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-3">Bedürfnis–Belastungs–Ressourcen-Matrix</label>
+          <textarea class="notes" id="notes-3" data-note="3" rows="8" placeholder="Bedürfnis → Beobachtung im Fall → mögliche Ressource"></textarea>
+
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="3"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="4">Weiter zur Einschätzung</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="4" id="schritt-4" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 4 · Bewerten</p>
+              <h2>Welche Anhaltspunkte sind gewichtig — und was bleibt offen?</h2>
+            </div>
+            <span class="phase-badge">Kinderschutz als Anwendungskontext</span>
+          </header>
+
+          <div class="callout warning">
+            <strong>Prüfungsregel:</strong> Keine Ferndiagnose und keine Entscheidung allein aus einem Einzelhinweis. Anhaltspunkte, Gegenhinweise, Schutzfaktoren und fehlende Informationen gegeneinander abwägen.
+          </div>
+
+          <div class="task-grid">
+            <section class="task-card">
+              <h3>Pro Gefährdungsannahme</h3>
+              <p>Welche Beobachtungen sprechen dafür, dass eine ernsthafte Gefährdung geprüft werden muss?</p>
+            </section>
+            <section class="task-card">
+              <h3>Gegen voreilige Festlegung</h3>
+              <p>Welche Informationen fehlen? Welche alternativen Erklärungen sind möglich? Was darf trotzdem nicht bagatellisiert werden?</p>
+            </section>
+          </div>
+
+          <section class="step-sources" data-step-sources="4" aria-label="Quellen für Schritt 4">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-4">Vorläufige fachliche Einschätzung</label>
+          <textarea class="notes" id="notes-4" data-note="4" rows="8" placeholder="Anhaltspunkte · Schutzfaktoren · Unsicherheiten · nächster Informationsbedarf"></textarea>
+
+          <details class="hint">
+            <summary>Prüfungsformulierung</summary>
+            <div>
+              <p>Statt „Es liegt sicher Kindeswohlgefährdung vor“ ist im Fallstadium oft präziser: „Es liegen mehrere Hinweise vor, die eine strukturierte Gefährdungseinschätzung nach dem Schutzverfahren erforderlich machen.“</p>
+            </div>
+          </details>
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="4"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="5">Weiter zum Verfahren</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="5" id="schritt-5" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 5 · Planen</p>
+              <h2>Was verlangt der Schutzauftrag — und wer macht was?</h2>
+            </div>
+            <span class="phase-badge">Schutzverfahren · § 8a SGB VIII</span>
+          </header>
+
+          <div class="law-sequence" aria-label="Vereinfachte Verfahrenslogik">
+            <div><span>1</span><p><strong>Hinweise ernst nehmen und dokumentieren.</strong><br>Beobachtung und Aussage möglichst konkret festhalten.</p></div>
+            <div><span>2</span><p><strong>Gefährdung fachlich einschätzen.</strong><br>Im Trägerverfahren mehrere Perspektiven einbeziehen.</p></div>
+            <div><span>3</span><p><strong>Insoweit erfahrene Fachkraft hinzuziehen.</strong><br>§ 8a Abs. 4 sieht dies für entsprechende Trägervereinbarungen vor; § 8b gibt beruflich mit Kindern und Jugendlichen Tätigen einen Beratungsanspruch.</p></div>
+            <div><span>4</span><p><strong>Mika und grundsätzlich die Erziehungsberechtigten beteiligen.</strong><br>Nur soweit dadurch der wirksame Schutz nicht in Frage gestellt wird.</p></div>
+            <div><span>5</span><p><strong>Auf geeignete Hilfen hinwirken.</strong><br>Schutz und Unterstützung gemeinsam denken.</p></div>
+            <div><span>6</span><p><strong>Jugendamt informieren, wenn die Gefährdung anders nicht abgewendet werden kann.</strong><br>Bei akuter Gefahr gilt das lokale Notfall- und Schutzverfahren; nicht auf diese vereinfachte Lernsequenz verlassen.</p></div>
+          </div>
+
+          <div class="callout info">
+            <strong>Wichtig:</strong> Für die Praxis ist die konkrete § 8a-Vereinbarung und Verfahrensanweisung des eigenen Trägers maßgeblich. Diese Lernstrecke ersetzt kein reales Schutzverfahren.
+          </div>
+
+          <section class="step-sources" data-step-sources="5" aria-label="Quellen für Schritt 5">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-5">Ablauf im Fall Mika</label>
+          <textarea class="notes" id="notes-5" data-note="5" rows="8" placeholder="Wer? · Was? · Wann? · Womit begründet? · Was dokumentieren?"></textarea>
+
+          <details class="hint">
+            <summary>Amtliche Rechtsgrundlagen</summary>
+            <div class="source-links">
+              <a href="https://www.gesetze-im-internet.de/sgb_8/__8a.html" target="_blank" rel="noreferrer">§ 8a SGB VIII – Schutzauftrag bei Kindeswohlgefährdung</a>
+              <a href="https://www.gesetze-im-internet.de/sgb_8/__8b.html" target="_blank" rel="noreferrer">§ 8b SGB VIII – Fachliche Beratung und Begleitung</a>
+              <a href="https://www.gesetze-im-internet.de/sgb_8/__8.html" target="_blank" rel="noreferrer">§ 8 SGB VIII – Beteiligung von Kindern und Jugendlichen</a>
+            </div>
+          </details>
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="5"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="6">Weiter zu Hilfen</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="6" id="schritt-6" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 6 · Handeln</p>
+              <h2>Wie lassen sich Schutz, Beteiligung und konkrete Hilfe verbinden?</h2>
+            </div>
+            <span class="phase-badge">Unterstützung</span>
+          </header>
+
+          <div class="task-grid">
+            <section class="task-card">
+              <h3>Mit Mika</h3>
+              <ul class="prompt-list">
+                <li>Wie kann die Fachkraft die nächsten Schritte transparent erklären?</li>
+                <li>Wobei kann Mika mitentscheiden?</li>
+                <li>Was braucht er heute, was mittelfristig?</li>
+              </ul>
+            </section>
+            <section class="task-card">
+              <h3>Im Helfersystem</h3>
+              <ul class="prompt-list">
+                <li>Welche internen Zuständigkeiten müssen aktiviert werden?</li>
+                <li>Welche externen Hilfen könnten passen?</li>
+                <li>Wie bleibt der Informationsaustausch auf das Notwendige begrenzt?</li>
+              </ul>
+            </section>
+          </div>
+
+          <section class="step-sources" data-step-sources="6" aria-label="Quellen für Schritt 6">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-6">Unterstützungsplan</label>
+          <textarea class="notes" id="notes-6" data-note="6" rows="8" placeholder="Sofort · nächste Tage · längerfristig · Beteiligung · Kooperation"></textarea>
+
+          <details class="hint">
+            <summary>Alternative Sinnachse</summary>
+            <div>
+              <p>Wenn der Blick nur auf „Meldung ja/nein“ fällt, schrumpft der Fall auf eine Verfahrensfrage. Werden Schutz und Beteiligung gleichgewichtig betrachtet, wird zusätzlich sichtbar, wie Vertrauen erhalten, Hilfe zugänglich und Mikas Handlungsspielraum gestärkt werden kann.</p>
+            </div>
+          </details>
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="6"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="7">Weiter zum Konzept</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="7" id="schritt-7" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 7 · Struktur verändern</p>
+              <h2>Was muss die Einrichtung aus dem Fall lernen?</h2>
+            </div>
+            <span class="phase-badge">Konzept & Prävention</span>
+          </header>
+
+          <div class="callout neutral">
+            Aus einem Fall wird Konzeptarbeit, wenn die Einrichtung nicht nur reagiert, sondern Bedarf, Ziel, Handlung und Reflexion verbindet. Bei Mika gehört dazu auch die Frage, ob der vorhandene Schutzablauf im Team tatsächlich handlungsfähig ist.
+          </div>
+
+          <section class="concept-quick" aria-label="Konzeptentwicklung als Lernzyklus">
+            <div class="quick-visual-head">
+              <p class="eyebrow">Konzeptentwicklung</p>
+              <h3>Planen → umsetzen → reflektieren → verändern</h3>
+            </div>
+            <div class="concept-cycle-quick">
+              <section><span>1</span><strong>Planung</strong><small>Bedarf und Ziele klären</small></section>
+              <section><span>2</span><strong>Umsetzung</strong><small>pädagogisches Handeln erproben</small></section>
+              <section><span>3</span><strong>Reflexion</strong><small>Erfahrungen auswerten</small></section>
+              <section><span>4</span><strong>Revision</strong><small>Erkenntnisse in neue Planung übersetzen</small></section>
+            </div>
+            <p class="concept-participation"><strong>Partizipation begleitet alle Phasen:</strong> Interessen und Bedürfnisse ermitteln, Ziele mitentwickeln, Umsetzung mitgestalten, Ergebnisse reflektieren und Kritik einbringen.</p>
+            <div class="goal-quick-grid">
+              <section><strong>Wirkungsziel</strong><span>Gewünschter Zustand oder gewünschte Entwicklung bei Kindern und Jugendlichen.</span></section>
+              <section><strong>Handlungsziel</strong><span>Pädagogische Handlung oder Arrangement, das diese Wirkung wahrscheinlicher machen soll.</span></section>
+            </div>
+            <p class="goal-caution">Ein umgesetztes Handlungsziel garantiert die gewünschte Wirkung nicht.</p>
+          </section>
+
+          <div class="three-columns">
+            <section class="task-card">
+              <h3>Struktur</h3>
+              <p>Welche Zuständigkeiten, Abläufe und Dokumentationswege müssen eindeutig sein?</p>
+            </section>
+            <section class="task-card">
+              <h3>Alltag</h3>
+              <p>Wie kann Prävention in Beziehung, Beteiligung, Beratung und Gruppenalltag integriert werden?</p>
+            </section>
+            <section class="task-card">
+              <h3>Team</h3>
+              <p>Welche Fortbildung, Fallberatung und gemeinsame Haltung braucht das multiprofessionelle Team?</p>
+            </section>
+          </div>
+
+          <section class="step-sources" data-step-sources="7" aria-label="Quellen für Schritt 7">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <label class="notes-label" for="notes-7">Drei konkrete Konzeptverbesserungen</label>
+          <textarea class="notes" id="notes-7" data-note="7" rows="8" placeholder="1. Maßnahme · Zweck · verantwortlich · überprüfbar an ..."></textarea>
+
+
+          <footer class="step-footer">
+            <label class="done-toggle"><input type="checkbox" data-complete="7"> Schritt als bearbeitet markieren</label>
+            <button class="button primary" type="button" data-next="8">Weiter zum Prüfungstransfer</button>
+          </footer>
+        </article>
+
+        <article class="step" data-step="8" id="schritt-8" hidden>
+          <header class="step-header">
+            <div>
+              <p class="step-kicker">Schritt 8 · Reflektieren</p>
+              <h2>Aus der Fallarbeit eine prüfungsfähige vollständige Handlung bauen</h2>
+            </div>
+            <span class="phase-badge">Transfer</span>
+          </header>
+
+          <div class="exam-chain">
+            <div><strong>1. Situation erfassen</strong><span>Fakten, Beteiligte, Auftrag, offene Fragen</span></div>
+            <div><strong>2. Fachlich analysieren</strong><span>Beziehung, Bedürfnisse, Ressourcen, Risiken, Recht</span></div>
+            <div><strong>3. Ziele formulieren</strong><span>Schutz, Beteiligung, Stabilisierung, Hilfezugang</span></div>
+            <div><strong>4. Handeln planen</strong><span>Gespräch, Team, insoweit erfahrene Fachkraft, Hilfen, ggf. Jugendamt</span></div>
+            <div><strong>5. Durchführen begründen</strong><span>Warum ist welcher Schritt fachlich passend?</span></div>
+            <div><strong>6. Auswerten und weiterentwickeln</strong><span>Wirkung prüfen, Konzept und Prävention verbessern</span></div>
+          </div>
+
+          <section class="step-sources" data-step-sources="8" aria-label="Quellen für Schritt 8">
+            <p class="source-loading">Quellen werden geladen …</p>
+          </section>
+
+          <section class="final-task">
+            <h3>Abschlussauftrag</h3>
+            <p>In 8–12 Sätzen eine zusammenhängende Antwort auf diese Prüfungsfrage formulieren:</p>
+            <blockquote>
+              Wie kann die Fachkraft im Fall Mika die professionelle Beziehung bewusst gestalten, notwendige Schutzfragen transparent und verfahrenssicher bearbeiten und daraus Konsequenzen für Beziehungsgestaltung und Konzept der Einrichtung ableiten?
+            </blockquote>
+          </section>
+
+          <label class="notes-label" for="notes-8">Prüfungsantwort</label>
+          <textarea class="notes large" id="notes-8" data-note="8" rows="12" placeholder="Zusammenhängende Begründung vom Lagebild bis zur Reflexion"></textarea>
+
+          <details class="hint">
+            <summary>Selbstcheck vor dem Abschluss</summary>
+            <div>
+              <ul class="checklist">
+                <li>Ich trenne Beobachtung und Interpretation.</li>
+                <li>Ich begründe Beziehungsgestaltung fachlich.</li>
+                <li>Ich benenne Unsicherheiten statt sie zu verdecken.</li>
+                <li>Ich ordne das § 8a-Verfahren korrekt ein.</li>
+                <li>Ich beteilige den Jugendlichen, soweit Schutz dadurch nicht gefährdet wird.</li>
+                <li>Ich denke Hilfen und Schutz zusammen.</li>
+                <li>Ich leite mindestens eine Konsequenz für das Einrichtungskonzept ab.</li>
+                <li>Ich reflektiere Wirkung und weiteres Vorgehen.</li>
+              </ul>
+            </div>
+          </details>
+
+          <footer class="step-footer final">
+            <label class="done-toggle"><input type="checkbox" data-complete="8"> Lernstrecke abgeschlossen</label>
+            <button class="button secondary" id="summary-button" type="button">Arbeitsstand zusammenfassen</button>
+          </footer>
+        </article>
+
+        <section class="completion-panel" id="completion-panel" hidden aria-live="polite">
+          <p class="eyebrow">Arbeitsstand</p>
+          <h2>Die Fallakte ist bereit für den Prüfungstransfer.</h2>
+          <p id="completion-text"></p>
+          <div class="completion-actions">
+            <button class="button primary" type="button" id="copy-summary">Zusammenfassung kopieren</button>
+            <button class="button secondary" type="button" id="close-summary">Zur Lernstrecke zurück</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="pdf-library" id="pdf-quellen">
+      <div class="pdf-library-head">
+        <div>
+          <p class="eyebrow">Quellenbasis Beziehungsgestaltung · OKJA</p>
+          <h2>Die relevanten PT2-Quellen des Edupool-Boards</h2>
+          <p>
+            Die Quellenbasis umfasst die für Beziehungsgestaltung in der OKJA einschlägigen PT2-Prüfungsunterlagen
+            und Fachquellen des Edupool-Boards. Wo eine belastbare öffentliche Fassung existiert, ist sie zusätzlich verlinkt.
+          </p>
+        </div>
+        <div class="source-actions">
+          <a class="button primary" href="analyse.html">Themenwissen öffnen</a>
+          <a class="button secondary" href="quellen/pdf-quellen.md" target="_blank" rel="noreferrer">PDF-Status der PT2-Quellen</a>
+          <a class="button secondary" href="RECHTE.md" target="_blank" rel="noreferrer">Rechtehinweis</a>
+        </div>
+      </div>
+
+      <div class="source-root" id="source-root">
+        <p class="source-loading">Oberquelle wird geladen …</p>
+      </div>
+
+      <div id="pdf-library-content">
+        <p class="source-loading">Quellenbibliothek wird geladen …</p>
+      </div>
+
+      <div class="source-actions pdf-footer-actions">
+        <a class="button secondary" href="docs/pruefungsstruktur.md" target="_blank" rel="noreferrer">Prüfungsstruktur</a>
+        <a class="button secondary" href="quellen/quellenverzeichnis.md" target="_blank" rel="noreferrer">Quellenverzeichnis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Beziehungsgestaltung in der OKJA · statische Lernwerkstatt · keine realen Falldaten eingeben</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
